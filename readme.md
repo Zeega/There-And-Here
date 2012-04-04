@@ -1,1 +1,1 @@
-This is the web application for the remmitences project.
+This is the web application for the remmitances project.
