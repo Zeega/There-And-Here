@@ -1,23 +1,6 @@
 (function(Connections) {
 
-	Connections.Collection = Backbone.Collection.extend({
 
-
-
-		initialize : function()
-		{
-
-		},
-		
-		url: function()
-		{
-			
-		},
-		
-
-
-	});
-	
 	
 	Connections.Items=Connections.Items||{}
 	

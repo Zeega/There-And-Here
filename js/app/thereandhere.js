@@ -34,12 +34,21 @@ this.thereandhere = {
 	
 	loadModules : function()
 	{
-	
+		var _this=this;
 		var Connections = thereandhere.module("connections");
-		this.connectionsMap=new Connections.Views.Map();
-		this.testConn=new Connections.Model();
 		
-		console.log(this.testConn);
+		
+		this.connectionsCollection = new Connections.Collection([
+				new Connections.Model({id:48,end_lat:52.519171,end_lng:13.406091199999992}),
+				new Connections.Model({id:49,end_lat:52.519171,end_lng:113.406091199999992})
+			]);
+
+		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
+		
+		this.connectionsCollection.on('change',function(connection){
+			if(connection.get('selected')) _this.loadPlayer(connection);
+			else console.log('not interested');
+		});
 	},
 	
 	startRouter: function()
@@ -69,16 +78,59 @@ this.thereandhere = {
 
 		console.log('Loading Main');
 		$('#main').html(this.connectionsMap.render());
-		
 		this.connectionsMap.addMap();
 		
+	},
+	
+
+	
+	loadPlayer: function(connection){
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		console.log(connection);
+		var _this=this;
+		var Connections = thereandhere.module("connections");
 		
 		
 		
 		
 		
+		this.navMaps=[
+			new Connections.Views.NavMap({
+				collection:connection.itemCollections[0],
+				center_lat:connection.get('begin_lat'),
+				center_lng:connection.get('begin_lng')
+			}),
+			new Connections.Views.NavMap({
+				collection:connection.itemCollections[1],
+				center_lat:connection.get('end_lat'),
+				center_lng:connection.get('end_lng')
+			})
+		];
+			
 		
+		$('#tah-map-top').append(this.navMaps[0].render());
+		$('#tah-map-bottom').append(this.navMaps[1].render());
 		
+		$('#tah-player').fadeIn('fast',function(){
+			_this.navMaps[0].addMap();
+			_this.navMaps[1].addMap();
+		});
+		
+		zeega.app.loadProject(48);
+					
+				
+	
 	},
 	
 	
