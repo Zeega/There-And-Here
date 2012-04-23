@@ -19,6 +19,10 @@ require.config({
 var loadFiles = [
 	'order!lib/jquery-1.7.1.min',
 
+	//data
+	
+	'order!data/lines',
+
 
 	//libraries
 	'order!lib/underscore',

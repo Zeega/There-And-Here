@@ -16,6 +16,7 @@
 			'opacity' : 0.9,
 			'fontSize' : 100,
 			'padding' : 5,
+			'overflow' : 'visible',
 			
 			linkable : true
 		},
@@ -52,7 +53,8 @@
 				color : this.model.get('attr').backgroundColor,
 				model: this.model,
 				label : 'Background Color',
-				opacity : true
+				opacity : true,
+				opacityValue : 0
 			});
 			
 			var color = new Layer.Views.Lib.ColorPicker({
@@ -83,14 +85,21 @@
 				
 			});
 			
-			var clearButton = new Layer.Views.Lib.ClearStyles({ model : this.model });
+			var textStyles = new Layer.Views.Lib.TextStyles({
+				model : this.model
+			})
+			
+			var fontChooser = new Layer.Views.Lib.FontChooser({
+				model : this.model
+			})
 			
 			this.controls
-				.append( bgcolor.getControl() )
+				.append( textStyles.getControl() )
+				.append( fontChooser.getControl() )
 				.append( color.getControl() )
+				.append( bgcolor.getControl() )
 				.append( sizeSlider.getControl() )
-				.append( paddingSlider.getControl() )
-				.append( clearButton.getControl() );
+				.append( paddingSlider.getControl() );
 			
 			return this;
 		}
@@ -103,15 +112,37 @@
 		
 		render : function()
 		{
+			
+			// this should be removed later!
+			var c = '';
+			var b = '';
+			if( _.isObject( this.model.get('attr').color ) )
+			{
+				var a = this.model.get('attr').color;
+				c = rgbToHex(a.r,a.g,a.b);
+				
+			}
+			else c = this.model.get('attr').color;
+			
+			if( _.isObject( this.model.get('attr').backgroundColor ) )
+			{
+				var a = this.model.get('attr').backgroundColor;
+				b = rgbToHex(a.r,a.g,a.b);
+			}
+			else b = this.model.get('attr').backgroundColor;
+			
+			
 			var style = {
-				'color' : this.model.get('attr').color,
-				'backgroundColor' : 'rgba('+ this.model.get('attr').backgroundColor.toRGB() +','+ (this.attr.backgroundColorOpacity || 1) +')',
+				'color' : 'rgba('+ c.toRGB() +','+ (this.model.get('attr').colorOpacity || 1) +')',
+				'backgroundColor' : 'rgba('+ b.toRGB() +','+ (this.model.get('attr').backgroundColorOpacity || 0) +')',
 				'opacity' : this.model.get('attr').opacity,
-				'fontSize' : this.model.get('attr').fontSize +'%',
+				'fontSize' : this.model.get('attr').fontSize < 100 ? '100%' : this.model.get('attr').fontSize +'%', // enforces minimum. remove this later
 				'padding' : this.model.get('attr').padding +'%',
 				'whiteSpace' : 'nowrap'
 			}
+			console.log(this.model.get('attr'))
 			console.log('color: '+ style.backgroundColor)
+			console.log(this.model)
 
 			$(this.el).html( _.template( this.getTemplate(), this.model.get('attr') ) ).css( style );
 			
@@ -123,7 +154,19 @@
 		onLayerEnter : function()
 		{
 			var _this = this;
+
+			this.$el.css('width' , _this.$el.find('#zedit-target').width()+'px' );
+			
+			//this.$el.css('width',_this.$el.find('#zedit-target').width()+'px');
+			
 			this.$el.find('#zedit-target').keypress(function(e){
+				_this.$el.css('width' , '' );
+				console.log(e.which)
+				if(e.which == 13)
+				{
+					
+				}
+				
 				_this.lazySave();
 			})
 			.bind('paste', function(e){
@@ -142,6 +185,7 @@
 		},
 		
 		lazySave : _.debounce( function(){
+			$(this.el).css( 'width',this.$el.find('#zedit-target').width()+'px' );
 			
 			var str = this.$el.find('#zedit-target').html();
 			

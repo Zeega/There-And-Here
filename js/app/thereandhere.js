@@ -45,10 +45,7 @@ this.thereandhere = {
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
 		
-		this.connectionsCollection.on('change',function(connection){
-			if(connection.get('selected')) _this.loadPlayer(connection);
-			else console.log('not interested');
-		});
+	
 	},
 	
 	startRouter: function()
@@ -87,17 +84,6 @@ this.thereandhere = {
 	loadPlayer: function(connection){
 	
 	
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		console.log(connection);
 		var _this=this;
 		var Connections = thereandhere.module("connections");
 		
@@ -128,8 +114,14 @@ this.thereandhere = {
 		});
 		
 		zeega.app.loadProject(48);
-					
-				
+		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
+			itemModel.on('selected',function(){
+				console.log(itemModel.id);
+				if(itemModel.id%2==0)zeega.app.loadProject(80);
+				else zeega.app.loadProject(48);
+		});
+		
+		});
 	
 	},
 	

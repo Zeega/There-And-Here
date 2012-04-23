@@ -24,9 +24,11 @@
 
 		init : function()
 		{
-			//load popcorn object
+			console.log(this.get('attr'));
+			console.log(this);
+			if( _.isUndefined(this.get('attr').attribution_uri)) this.set({attribution_uri:this.get('attribution_url')});
 			this.video = new Plyr2({
-				url : this.get('attr').attribution_url,
+				url : this.get('attr').attribution_uri,
 				uri : this.get('attr').uri,
 				id : this.id,
 				cue_in  : this.get('attr').cue_in,
@@ -166,6 +168,21 @@
 		
 		onPreload : function()
 		{
+			this.model.video.on('timeupdate', function(){ 
+				if(Math.abs(_this.model.video.pop.volume()-_this.model.get('attr').volume)>.01)_this.model.video.pop.volume(_this.model.get('attr').volume);
+				
+				if( _this.model.get('attr').cue_out != 0 && _this.model.video.pop.currentTime() > _this.model.get('attr').cue_out )
+				{
+					
+					_this.model.video.pop.currentTime( _this.model.get('attr').cue_in );
+					_this.model.video.pop.pause();
+					_this.model.trigger('playback_ended');
+					console.log('playback ended');
+				}
+				
+			}, this )
+			
+			
 			var _this = this;
 			if( !this.model.loaded )
 			{
@@ -181,17 +198,17 @@
 		
 		onPlay : function()
 		{
-			this.model.video.pop.play();
+			this.model.video.play();
 		},
 		
 		onExit : function()
 		{
-			this.model.video.pop.pause();
+			this.model.video.pause();
 		},
 		
 		onUnrender : function()
 		{
-			this.model.video.pop.pause();
+			this.model.video.pause();
 			//Popcorn.destroy(this.model.video.pop);	
 
 		}

@@ -42,7 +42,7 @@ this.zeega = {
 		//this.data = $.parseJSON(projectJSON);
 		//console.log(this.data)
 		
-		this.player = new Player2('tah-zeega-player');
+		this.player = new Player2($('#tah-zeega-player'),true);
 		
 		
 	},

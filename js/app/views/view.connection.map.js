@@ -65,20 +65,76 @@
 			//Draw connections on the map
 			
 			var _this=this;
-			_.each( _.toArray(this.collection), function(connectionModel){
-				
-				
+			var featureLayer = new L.GeoJSON();
+			 var defaultStyle = {
+				color: "#2262CC",
+				weight: 4,
+				opacity: 0.6,
+				fillOpacity: 0.1,
+				fillColor: "#2262CC"
+			};
 			
+			var highlightStyle = {
+				color: '#2262CC', 
+				weight: 5,
+				opacity: 0.6,
+				fillOpacity: 0.65,
+				fillColor: '#2262CC'
+			};
+			
+			featureLayer.on("featureparse", function (e){
+		 
+				e.layer.setStyle(defaultStyle);
+				(function(layer, properties) {
+			  
+			 	 layer.on("mouseover", function (e) {
 				
-				var polyline = new L.Polyline(connectionModel.get('latlngs'), {color: 'red'})
-				
-				//Bind popup to to polyline – could also 
-				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
-				
-				polyline.on('click',function(){connectionModel.set({'selected':true});});
-				_this.map.addLayer(polyline);
-					
-			});
+					layer.setStyle(highlightStyle);
+					var popup = $("<div></div>", {
+					id: "popup-" + properties.id,
+					css: {
+						position: "absolute",
+						bottom: "85px",
+						left: "50px",
+						zIndex: 1002,
+						backgroundColor: "white",
+						padding: "8px",
+						border: "1px solid #ccc"
+					}
+				});
+				// Insert a headline into that popup
+				var hed = $("<div></div>", {
+					text: properties.start + " –––––––––––– " + properties.end,
+					css: {fontSize: "16px", marginBottom: "3px"}
+				}).appendTo(popup);
+				// Add the popup to the map
+				popup.appendTo(div);
+			  });
+			  
+			  layer.on("click",function(e){
+			  	thereandhere.app.loadPlayer(thereandhere.app.connectionsCollection.at(0));
+			 
+			  
+			  });
+			  
+			  
+			  // Create a mouseout event that undoes the mouseover changes
+			  layer.on("mouseout", function (e) {
+				// Start by reverting the style back
+				layer.setStyle(defaultStyle); 
+				// And then destroying the popup
+				console.log(properties.id);
+				$("#popup-" + properties.id).remove();
+			  });
+			  // Close the "anonymous" wrapper function, and call it while passing
+			  // in the variables necessary to make the events work the way we want.
+			})(e.layer, e.properties);
+		});
+			
+			featureLayer.addGeoJSON(lines);
+			
+			this.map.addLayer(featureLayer);
+		
 		},
 	
 		/* Template (currently just map container) */
@@ -162,7 +218,7 @@
 				//Bind popup to to polyline – could also 
 				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
 				
-				circleMarker.on('click',function(){connectionModel.trigger('selected');});
+				circleMarker.on('click',function(){itemModel.trigger('selected');});
 				_this.map.addLayer(circleMarker);
 					
 			});

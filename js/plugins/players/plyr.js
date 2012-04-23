@@ -86,7 +86,7 @@ var Plyr2 = Backbone.Model.extend({
 		autoplay : true,
 		cue_in : 0,
 		cue_out : 150,
-		volume : 50,
+		volume : .5,
 		
 		video_target : null, // element id
 		controls_target : null, // element id
@@ -96,6 +96,7 @@ var Plyr2 = Backbone.Model.extend({
 	{
 		//set video format type
 		this.set(options);
+		console.log(this);
 		this.set( 'format', this.getFormat(this.get('url')) );
 	},
 	
@@ -111,8 +112,7 @@ var Plyr2 = Backbone.Model.extend({
 		return format;
 	},
 	
-	placeVideo : function( el )
-	{
+	placeVideo : function( el ){
 		if( !this.isVideoLoaded)
 		{
 			var _this = this;
@@ -124,29 +124,40 @@ var Plyr2 = Backbone.Model.extend({
 				case 'html5':
 					this.pop = Popcorn('#zvideo-'+ this.id);
 					this.pop.listen( 'canplay', function(){
-						_this.trigger('video_canPlay');
-						_this.pop.currentTime(_this.get('cue_in'));
-						if( _this.get('control_mode') != 'none' ) _this.displayControls();
+					
+						if(_this.get('cue_in')!=0) {
+							_this.pop.listen('seeked',function(){
+							
+								_this.trigger('video_canPlay');
+							});
+						
+							_this.pop.currentTime(_this.get('cue_in'));
+							console.log('seeking to: ' +_this.get('cue_in'));
+						
+						}
+						else _this.trigger('video_canPlay');
+						_this.pop.volume(_this.get('volume'));
+						
 						
 					});
 					break;
 				case 'flashvideo':
 					this.pop = Popcorn.flashvideo('#zvideo-'+ this.id, this.get('uri') );
 					this.pop.listen('loadeddata',function(){
+						_this.pop.volume(_this.get('volume'));
 						_this.trigger('video_canPlay');
 						_this.pop.currentTime(_this.get('cue_in'));
-						if( _this.get('control_mode') != 'none' ) _this.displayControls();
 					});
 					break;
 				case 'youtube':
-					
-					this.pop = Popcorn.youtube('#zvideo-'+ this.id, this.get('url'),{cue_in:this.get('cue_in')} );
+					console.log(_this.get('volume'));
+					this.pop = Popcorn.youtube('#zvideo-'+ this.id, this.get('url'),{volume:this.get('volume'), cue_in:this.get('cue_in')} );
 					this.pop.listen('canplaythrough',function(){
-						
+						console.log(_this.get('volume'));
 						_this.pop.play();
 						_this.pop.pause();
-						
-						if( _this.get('control_mode') != 'none' ) _this.displayControls();
+						_this.pop.volume(_this.get('volume'));
+						console.log( _this.get('control_mode'));
 						_this.trigger('video_canPlay');
 					});
 					break;
@@ -156,21 +167,25 @@ var Plyr2 = Backbone.Model.extend({
 						
 						_this.trigger('video_canPlay');
 						_this.pop.currentTime(_this.get('cue_in'));
-						if( _this.get('control_mode') != 'none' ) _this.displayControls();
 					});
 					break;
 				default:
 					console.log('none set');
+				
 			}
+			
+			this.pop.listen('timeupdate', function(){
+				_this.trigger('timeupdate');
+				_this.trigger('timeupdate_controls');
+			});
+			
+			
 			this.isVideoLoaded = true;
 			
 		}
 	},
 	
-	displayControls : function()
-	{
-		console.log('display controls')
-	},
+
 	
 	getVideoView : function(){
 		
@@ -210,8 +225,22 @@ var Plyr2 = Backbone.Model.extend({
 	
 	return this.pop.currentTime();
 	
-	}
+	},
 	
+	play : function(){
+	
+		if(this.pop&&this.pop.paused()){
+			this.pop.play();
+
+		}
+	},
+	pause : function(){
+	
+		if(this.pop&&!this.pop.paused()){
+			this.pop.pause();
+
+		}
+	}
 	
 	
 })
@@ -244,7 +273,7 @@ var Plyr = Class.extend({
 		if("volume" in args) this.volume  = args['volume'];
 		else this.volume  = 1;
 	
-/*		
+	
 		if(this.controls==1){
 			if(this.controlsType =='standard'){		
 				this.controlsWrapper.append($('<div>').attr('id','plyr-standard')
@@ -300,7 +329,7 @@ var Plyr = Class.extend({
 	
 			}
 		}
-*/		
+		
 		var _this=this;
 
 		if(this.url.match(/^http:\/\/(?:www\.)?youtube.com\/watch\?(?=.*v=\w+)(?:\S+)?$/)) this.format = 'youtube'
@@ -392,7 +421,7 @@ var Plyr = Class.extend({
 		// move to  playback controls
 		
 		
-		/*
+
 			this.controlsWrapper.find('.plyr-scrubber').draggable({
 				axis:'x',
 				containment: 'parent',
@@ -446,9 +475,9 @@ var Plyr = Class.extend({
 			
 			}
 		});
-		*/
+	
 		}
-		/*
+	
 		this.controlsWrapper.find('#plyr-volume').slider({
 				min : 0,
 				max : 1,
@@ -463,7 +492,7 @@ var Plyr = Class.extend({
 					//$('#player-'+_this._id).trigger('updated');
 				}
 		});
-		*/
+	
 		
 		
 		//Add popcorn listeners
