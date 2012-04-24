@@ -19,12 +19,12 @@
 		
 			
 			this.mapRendered=false;
-			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.map-fbr9zj5s/{z}/{x}/{y}.png',
+			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.griddedpopulation/{z}/{x}/{y}.png',
 	    	this.mapboxAttrib = '',
 	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, attribution: this.mapboxAttrib});
 			this.geoLocated=true;
 		
-			this.latlng = new L.LatLng( 40.7774,-73.9606);
+			this.latlng = new L.LatLng( 23.1, -2.8);
 		
 			//use template to clone the database items into
 			var template = _.template( this.getTemplate() );
@@ -53,12 +53,12 @@
 
 			this.map = new L.Map(div,{
 			
-				scrollWheelZoom:false,
-				doubleClickZoom:false,
+				scrollWheelZoom:true,
+				doubleClickZoom:true,
 				zoomControl:false,
 			
 			});
-	    	this.map.setView(this.latlng, 2).addLayer(this.mapboxLayer);
+	    	this.map.setView(this.latlng, 3).addLayer(this.mapboxLayer);
 	    	$('.leaflet-control-attribution').hide();
     		var that=this;
     
