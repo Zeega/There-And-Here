@@ -67,19 +67,19 @@
 			var _this=this;
 			var featureLayer = new L.GeoJSON();
 			 var defaultStyle = {
-				color: "#2262CC",
+				color: "#0099FF",
 				weight: 4,
 				opacity: 0.6,
 				fillOpacity: 0.1,
-				fillColor: "#2262CC"
+				fillColor: "#0099FF"
 			};
 			
 			var highlightStyle = {
-				color: '#2262CC', 
+				color: '#0099FF', 
 				weight: 5,
 				opacity: 0.6,
 				fillOpacity: 0.65,
-				fillColor: '#2262CC'
+				fillColor: '#0099FF'
 			};
 			
 			featureLayer.on("featureparse", function (e){

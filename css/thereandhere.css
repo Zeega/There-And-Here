@@ -38,7 +38,8 @@ width:100%;
 height:100%;
 min-height:500px;
 position: fixed;
-top:0px;
+top:100px;
+left:20px;
 
 
 
@@ -48,8 +49,8 @@ top:0px;
 
 
 position:fixed;
-left:50px;
-top:50px;
+left:20px;
+top:100px;
 width:400px;
 height:250px;
 background-color:green;
@@ -65,7 +66,7 @@ overflow: hidden;
 
 position:fixed;
 left:475px;
-top:50px;
+top:100px;
 width:300px;
 height:200px;
 background-color:purple;
@@ -79,7 +80,7 @@ overflow: hidden;
 
 position:fixed;
 left:475px;
-top:275px;
+top:475px;
 width:300px;
 height:200px;
 background-color:blue;
@@ -95,6 +96,17 @@ left:50px;
 top:375px;
 width:400px;
 height:200px;
+overflow: hidden;
+
+}
+
+
+#mainmenu {
+font-size:24px;
+position:fixed;
+color:white;
+left:20px;
+top:20px;
 overflow: hidden;
 
 }
