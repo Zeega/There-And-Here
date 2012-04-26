@@ -102,10 +102,10 @@
 						border: "1px solid #ccc"
 					}
 				});
-				// Insert a headline into that popup
+				// Insert a headline into that popup ADJUST STYLE HERE
 				var hed = $("<div></div>", {
 					text: properties.start + " –––––––––––– " + properties.end,
-					css: {fontSize: "16px", marginBottom: "3px"}
+					css: {fontSize: "12px"}
 				}).appendTo(popup);
 				// Add the popup to the map
 				popup.appendTo(div);
