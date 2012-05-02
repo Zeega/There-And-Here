@@ -31,7 +31,7 @@ var lines = { "type": "FeatureCollection",
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-117.794, 33.685], [126.979, 37.5639]
+          [-117.794, 33.685],[126.979, 37.5639]
           ]
         },
       "properties": {

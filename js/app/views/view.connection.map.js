@@ -21,10 +21,10 @@
 			this.mapRendered=false;
 			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.griddedpopulation/{z}/{x}/{y}.png',
 	    	this.mapboxAttrib = '',
-	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, attribution: this.mapboxAttrib});
+	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, minZoom: 3, attribution: this.mapboxAttrib});
 			this.geoLocated=true;
 		
-			this.latlng = new L.LatLng( 23.1, -2.8);
+			this.latlng = new L.LatLng( 30.8, -17.2);
 		
 			//use template to clone the database items into
 			var template = _.template( this.getTemplate() );
@@ -68,7 +68,7 @@
 			var featureLayer = new L.GeoJSON();
 			 var defaultStyle = {
 				color: "#0099FF",
-				weight: 4,
+				weight: 5,
 				opacity: 0.6,
 				fillOpacity: 0.1,
 				fillColor: "#0099FF"
@@ -76,7 +76,7 @@
 			
 			var highlightStyle = {
 				color: '#0099FF', 
-				weight: 5,
+				weight: 6,
 				opacity: 0.6,
 				fillOpacity: 0.65,
 				fillColor: '#0099FF'
@@ -94,12 +94,12 @@
 					id: "popup-" + properties.id,
 					css: {
 						position: "absolute",
-						bottom: "85px",
-						left: "50px",
+						bottom: "100px",
+						left: "80px",
 						zIndex: 1002,
-						backgroundColor: "white",
-						padding: "8px",
-						border: "1px solid #ccc"
+						backgroundColor: "#FFF",
+						padding: "15px",
+						border: "2px solid #0099ff"
 					}
 				});
 				// Insert a headline into that popup ADJUST STYLE HERE
