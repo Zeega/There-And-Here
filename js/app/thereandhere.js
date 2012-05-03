@@ -39,8 +39,7 @@ this.thereandhere = {
 		
 		
 		this.connectionsCollection = new Connections.Collection([
-				new Connections.Model({id:48,end_lat:52.519171,end_lng:13.406091199999992}),
-				new Connections.Model({id:49,end_lat:52.519171,end_lng:113.406091199999992})
+				new Connections.Model({id:48,end_lat:52.519171,end_lng:13.406091199999992})
 			]);
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
@@ -76,31 +75,46 @@ this.thereandhere = {
 		console.log('Loading Main');
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
+		var _this=this;
 		
+		
+		
+		//UX
+		
+		
+		$('#home').click(function(){ thereandhere.app.home();});
+	
+		
+		
+		
+	},
+	
+	home: function(){
+	
+		this.router.navigate('',{silent:true});
+		$('#tah-player').fadeOut('fast');
+	
 	},
 	
 
 	
 	loadPlayer: function(connection){
 	
-	
+
+
 		var _this=this;
 		var Connections = thereandhere.module("connections");
-		
+		this.router.navigate('connection/'+ connection.id, {silent:true});
 		
 		
 		
 		
 		this.navMaps=[
 			new Connections.Views.NavMap({
-				collection:connection.itemCollections[0],
-				center_lat:connection.get('begin_lat'),
-				center_lng:connection.get('begin_lng')
+				collection:connection.itemCollections[0]
 			}),
 			new Connections.Views.NavMap({
-				collection:connection.itemCollections[1],
-				center_lat:connection.get('end_lat'),
-				center_lng:connection.get('end_lng')
+				collection:connection.itemCollections[1]
 			})
 		];
 			
@@ -113,16 +127,27 @@ this.thereandhere = {
 			_this.navMaps[1].addMap();
 		});
 		
-		zeega.app.loadProject(48);
+		zeega.app.loadProject(257);
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
-				console.log(itemModel.id);
-				if(itemModel.id%2==0)zeega.app.loadProject(80);
-				else zeega.app.loadProject(48);
+				console.log(itemModel.get('attributes').project_id);
+				$('#project_title').fadeOut('fast',function(){
+					$(this).html(itemModel.get('title')).fadeIn();
+					});
+				zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
 		
 		});
-	
+		_.each( _.toArray(this.navMaps[1].collection), function(itemModel){		
+			itemModel.on('selected',function(){
+				console.log(itemModel.get('attributes').project_id);
+				$('#project_title').fadeOut('fast',function(){
+					$(this).html(itemModel.get('title')).fadeIn();
+					});
+				zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
+		});
+		
+		});
 	},
 	
 	

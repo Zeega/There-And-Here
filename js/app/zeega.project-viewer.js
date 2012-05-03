@@ -48,10 +48,11 @@ this.zeega = {
 	},
 	
 	
-	loadProject :function(projectId){
+	loadProject :function(projectId,options){
 	
-	  console.log('loading project');
-		this.player.loadProjectById(projectId);
+	
+		var opt = options || {};
+		this.player.loadProjectById(projectId,opt);
 	}
 	
 	

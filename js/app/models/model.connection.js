@@ -24,13 +24,27 @@
 		{
 			var _this=this;
 			
+	
 			this.itemCollections = [
-				new Connections.Items.Collection({id:182, center_lat:this.get('begin_lat'),center_lng:this.get('begin_lng')}),
-				new Connections.Items.Collection({id:184, center_lat:this.get('end_lat'),center_lng:this.get('end_lng')}),
+				new Connections.Items.Collection({url:'js/data/losangeles.js'}),
+				new Connections.Items.Collection({url:'js/data/tavehua.js'}),
 			];
 			
-			this.itemCollections[0].fetch({success:function(collection,response){collection.reset(response.items[0].child_items);console.log(collection);}});
-			this.itemCollections[1].fetch({success:function(collection,response){collection.reset(response.items[0].child_items);console.log(collection);}});
+			this.itemCollections[0].fetch({success:function(collection,response){
+					collection.reset(response.items[0].child_items);
+					collection.tiles=response.items[0].attributes.tiles;
+					collection.center_lat=response.items[0].media_geo_latitude;
+					collection.center_lng=response.items[0].media_geo_longitude;
+					console.log(collection);
+				
+				}});
+			this.itemCollections[1].fetch({success:function(collection,response){
+				collection.reset(response.items[0].child_items);
+				collection.tiles=response.items[0].attributes.tiles;
+				collection.center_lat=response.items[0].media_geo_latitude;
+				collection.center_lng=response.items[0].media_geo_longitude;	
+				console.log(collection);
+			}});
 		
 			
 			//Create a random endpoint

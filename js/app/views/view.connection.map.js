@@ -123,7 +123,7 @@
 				// Start by reverting the style back
 				layer.setStyle(defaultStyle); 
 				// And then destroying the popup
-				console.log(properties.id);
+				
 				$("#popup-" + properties.id).remove();
 			  });
 			  // Close the "anonymous" wrapper function, and call it while passing
@@ -160,14 +160,8 @@
 			
 			
 		
+				this.geoLocated=true;
 			
-			this.mapRendered=false;
-			this.mapboxUrl = 'http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png',
-	    	this.mapboxAttrib = '',
-	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, attribution: this.mapboxAttrib});
-			this.geoLocated=true;
-		
-			this.latlng = new L.LatLng( this.center_lat,this.center_lng);
 		
 			//use template to clone the database items into
 			var template = _.template( this.getTemplate() );
@@ -190,7 +184,16 @@
 	
 		addMap:function()
 		{
-			console.log('adding map');
+			this.mapRendered=false;
+			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/'+this.collection.tiles+'/{z}/{x}/{y}.png',
+	    	this.mapboxAttrib = '',
+	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, attribution: this.mapboxAttrib});
+		
+			console.log(this.collection);
+		
+			this.latlng = new L.LatLng( this.collection.center_lat,this.collection.center_lng);
+
+			
 			this.mapRendered=true;
 			var div = $(this.el).find('.navigation-map').get(0);
 
@@ -200,9 +203,9 @@
     		var that=this;
     
 			//Draw connections on the map
-			console.log(this.collection);
+		
 			var _this=this;
-			console.log(this);
+		
 			_.each( _.toArray(this.collection), function(itemModel){
 				
 				/*
@@ -218,7 +221,9 @@
 				//Bind popup to to polyline – could also 
 				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
 				
-				circleMarker.on('click',function(){itemModel.trigger('selected');});
+				circleMarker.on('click',function(){
+				console.log('some clickin be happenin');
+				itemModel.trigger('selected');});
 				_this.map.addLayer(circleMarker);
 					
 			});

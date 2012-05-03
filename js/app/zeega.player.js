@@ -38,8 +38,11 @@ var Player2 = Backbone.View.extend({
 		this.data = data;
 		this.parseData( data );
 		
+		
 		var s = ( _.isUndefined(options) || _.isUndefined(options.sequenceID) ) ? data.project.sequences[0].id : options.sequenceID;
 		var f = ( _.isUndefined(options) || _.isUndefined(options.frameID) ) ? _.find(data.project.sequences, function(seq){return seq.id == s }).frames[0].id : options.frameID;
+		
+		
 		
 		this.setCurrentSequence( s );
 		this.setCurrentFrame( f );
@@ -64,19 +67,26 @@ var Player2 = Backbone.View.extend({
 		var _this = this;
 		this.model= new Backbone.Model();
 		this.generateBackbone();
+		
+		console.log('[][][][][]');
+		console.log(options);
+		
+		
 		this.model.on('sequences_loaded',function(){
-			console.log(_this.sequences);
+			
 			_this.render();
 			_this.setCurrentSequence( _this.initial_s );
 			_this.setCurrentFrame( _this.initial_f );
 			_this.setCurrentLayers();
 			
 			//this.currentFrame.on('ready', this.renderCurrentFrame, this);
+	
+		/*
 			console.log('current sequence/frame/layers')
 			console.log(_this.currentSequence)
 			console.log(_this.currentFrame)
 			console.log(_this.currentLayers)
-			
+		*/	
 			_this.goToFrame( _this.currentFrame );
 		});
 		$.getJSON(sessionStorage.getItem('hostname') + sessionStorage.getItem('directory') +'api/projects/'+projectId,function(data){
@@ -84,12 +94,14 @@ var Player2 = Backbone.View.extend({
 		 	
 		 	_this.initial_s = ( _.isUndefined(options) || _.isUndefined(options.sequenceID) ) ? data.project.sequences[0].id : options.sequenceID;
 			_this.initial_f = ( _.isUndefined(options) || _.isUndefined(options.frameID) ) ? _.find(data.project.sequences, function(seq){return seq.id == _this.initial_s }).frames[0].id : options.frameID;
-			console.log(_this.initial_s);
+			
+		
+		console.log(_this.initial_s);
 			console.log(_this.initial_f);
 			
 		 	_this.model.trigger('sequences_loaded');
 		 	
-		 	console.log(_this.sequences );
+		 	
 		 });
 		
 	
@@ -294,7 +306,7 @@ var Player2 = Backbone.View.extend({
 			className : 'clearfix',
 			render : function()
 			{
-				console.log(this.model.attributes)
+			
 				$(this.el).html( _.template(this.getTemplate(),this.model.attributes ) )
 			},
 			
@@ -816,7 +828,6 @@ var Player2 = Backbone.View.extend({
 					"<img height='75' width='35' src='"+ sessionStorage.getItem('hostname') + sessionStorage.getItem('directory')+'images/mediaPlayerArrow_shadow.png' +"'>"+
 				"</div>"+
 				"<div id='preview-media'></div>"+
-				"<div id='citation' class='player-overlay'><ul class='clearfix'></ul></div>"+
 			"</div>"+
 		"";
 		
