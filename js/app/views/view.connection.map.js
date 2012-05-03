@@ -21,7 +21,7 @@
 			this.mapRendered=false;
 			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.griddedpopulation/{z}/{x}/{y}.png',
 	    	this.mapboxAttrib = '',
-	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, minZoom: 3, attribution: this.mapboxAttrib});
+	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 12, minZoom: 3, attribution: this.mapboxAttrib});
 			this.geoLocated=true;
 		
 			this.latlng = new L.LatLng( 30.8, -17.2);
