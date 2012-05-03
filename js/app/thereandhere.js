@@ -66,7 +66,8 @@ this.thereandhere = {
 	
 	goToConnection : function(connectionId)
 	{
-		console.log('GO TO Connection: '+connectionId)
+		console.log('GO TO Connection: '+connectionId);
+		this.loadPlayer(thereandhere.app.connectionsCollection.at(0));
 	},
 
 	loadMain : function( frame )
