@@ -9,7 +9,7 @@
 			"media_geo_longitude": -118.299950,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.LosAngelesTavehua"
+				"tiles":"zeega.map-5hl0w2lf"
 			},
 			"child_items": [
 				{
