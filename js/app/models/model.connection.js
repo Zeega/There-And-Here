@@ -32,6 +32,10 @@
 				new Connections.Items.Collection({url:'js/data/limuru.js'}),
 				new Connections.Items.Collection({url:'js/data/bronx.js'}),
 				new Connections.Items.Collection({url:'js/data/akuse.js'}),
+				new Connections.Items.Collection({url:'js/data/losangeles-allison.js'}),
+				new Connections.Items.Collection({url:'js/data/mexico-allison.js'}),
+				new Connections.Items.Collection({url:'js/data/touba.js'}),
+				new Connections.Items.Collection({url:'js/data/newyork-charles.js'}),
 			];
 			
 			this.itemCollections[0].fetch({success:function(collection,response){
