@@ -28,6 +28,10 @@
 			this.itemCollections = [
 				new Connections.Items.Collection({url:'js/data/losangeles.js'}),
 				new Connections.Items.Collection({url:'js/data/tavehua.js'}),
+				new Connections.Items.Collection({url:'js/data/paterson.js'}),
+				new Connections.Items.Collection({url:'js/data/limuru.js'}),
+				new Connections.Items.Collection({url:'js/data/bronx.js'}),
+				new Connections.Items.Collection({url:'js/data/akuse.js'}),
 			];
 			
 			this.itemCollections[0].fetch({success:function(collection,response){
