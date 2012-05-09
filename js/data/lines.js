@@ -48,7 +48,7 @@ var lines = { "type": "FeatureCollection",
         "end_file":"seoul-david",
         "id":3
         }
-      }/*,
+      },
 	  { "type": "Feature",
       "geometry": {
         "type": "LineString",
@@ -59,12 +59,12 @@ var lines = { "type": "FeatureCollection",
       "properties": {
         "start": "New York, NY",
         "end": "Seoul, Korea",
-        "description":"",
-        "start_file":"",
-        "end_file":"",
+        "description":"As a single-race nation, Korea has an unique position in this global world but Koreans are very easily found all over the world even including in Columbia University. In 70's and 80's Koreans struggled to earn money by sending miners and nurses to Germany, sent army to Vietnam and took any economic benefit from them. However, things changed. Even though many Koreans are making a living in the States, their money is largely spent in the States and significant number of parents sent their children with huge amount of tuition fee for their education. This research project is for address how things have been changed by time goes by and what is happening around Koreans in New York, especially in Manhattan. ",
+        "start_file":"newyork-yoojin",
+        "end_file":"seoul-yoojin",
         "id":4
         }
-      }*/,
+      },
 	  { "type": "Feature",
       "geometry": {
         "type": "LineString",

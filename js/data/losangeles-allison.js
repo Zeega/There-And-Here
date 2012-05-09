@@ -22,6 +22,39 @@
 							"project_id":746,
 							"frame_id":3726
 					}
+				},
+				{
+					"id": 18,
+					"title": "Tepeaca",
+					"description": "",
+					"media_geo_latitude": 34.043699,
+					"media_geo_longitude": -118.192121,
+					"attributes": {
+							"project_id":750,
+							"frame_id":4322
+					}
+				},
+				{
+					"id": 19,
+					"title": "Mexcaltitan",
+					"description": "",
+					"media_geo_latitude": 33.992619, 
+					"media_geo_longitude": -118.262157,
+					"attributes": {
+							"project_id":749,
+							"frame_id":3761
+					}
+				},
+				{
+					"id": 110,
+					"title": "Santa Rita",
+					"description": "",
+					"media_geo_latitude": 33.990199, 
+					"media_geo_longitude": -118.202763,
+					"attributes": {
+							"project_id":751,
+							"frame_id":3765
+					}
 				}
 			],
 			"tags": []
