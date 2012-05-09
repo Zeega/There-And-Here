@@ -203,9 +203,9 @@
 				var circleMarker = new L.CircleMarker(itemModel.latlng(),{color:'red'})
 				
 				circleMarker.on('click',function(){
-	
-				itemModel.trigger('selected');});
-				_this.map.addLayer(circleMarker);
+					console.log('clicked here');
+					itemModel.trigger('selected');});
+					_this.map.addLayer(circleMarker);
 					
 			});
 		},

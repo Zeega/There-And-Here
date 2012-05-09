@@ -76,7 +76,7 @@ var lines = { "type": "FeatureCollection",
         "start": "Patterson, NJ",
         "end": "Limuru, Kenya",
         "description":"In Paterson, New Jersey, there is a recently opened Kenyan community gathering point called Uhuru Garden. It is a restaurant, a club as well as a conference venue for both official and informal diaspora meetings.  With their authentic recipes and ingredients imported from Kenya, Uhuru Garden is one of the very few places near New York&#45;New Jersey that brings homeliness to the Kenyan immigrants around the area. Back home in Kenya &#45; where authentic ingredients are from &#45; agriculture is becoming ubiquitous thanks to the emerging virtual market place. One day in Limuru, Central Kenya, small farmers organized a field day, registering themselves to companies like Uza&#45;Mazao &#45; a virtual market place that helps the farmers to establish stable earnings via direct SMS communication with buyers across the world. Nairobi based filmmakers Slum&#45;TV visited the field day to document how this works.",
-        "start_file":"paterson",
+        "start_file":"patterson",
         "end_file":"limuru",
         "id":5
         }
@@ -108,7 +108,7 @@ var lines = { "type": "FeatureCollection",
         "start": "New York, NY",
         "end": "Touba, Senegal",
         "description":"Located in central Senegal, Touba is a rapidly growing 2,000,000&#45;people city. It was founded in 1887 by Amadu Bàmba, a Muslim Sufi religious leader also founder of the large Mouride brotherhood. Mostly confined to Senegal until the end of the Second World War, the brotherhood experienced an important out migratory movement from the Holy City of Touba that sent Mouride disciples first to the other cities of Senegal and Africa, and then to Europe and the US. Through a rigorous work ethic, Mourides have retained their financial and religious independence and have become known as small&#45;time international businessmen. They are famous for their entrepreneurship as much as for their moderate, essentially African, vision of Islam. Expatriates Mourides are mainly active in the service sector and gains from these international activities are remitted to Touba. As a result, Touba can be considered central node in an alternative global network.",
-        "start_file":"tuba",
+        "start_file":"touba",
         "end_file":"newyork-charles",
         "id":7
         }
@@ -124,7 +124,7 @@ var lines = { "type": "FeatureCollection",
         "start": "New Brunswick, New Jersey",
         "end": "Nuevo Laredo, Mexico",
         "description":"Our topic is mainly about forced migration issue caused by poor security problem in Central America.  And there are three different categories which include political, economic and cultural stories. Firstly, we introduce the political situation between USA and Central American countries and focus on Kevin’s story: it is about Honduran child migrants as they journey through Mexican route to the U.S. on a freight train they call The Beast.  Second, we want to talk about how difficult those migrants settle down in a new country and remittance introducing a Honduran family’s story (Tijuana, Texas border) and Honduran community in N.J (Sterling chase horse Farm). Third, the cultural category is about the successful Honduran community in New York, and we introduce Honduran food carts and restaurants spreading in South Bronx and N.J.",
-        "start_file":"new jersey",
+        "start_file":"newjersey",
         "end_file":"nuevolaredo",
         "id":8
         }

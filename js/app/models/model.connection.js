@@ -26,7 +26,7 @@
 					collection.tiles=response.items[0].attributes.tiles;
 					collection.center_lat=response.items[0].media_geo_latitude;
 					collection.center_lng=response.items[0].media_geo_longitude;
-					console.log(collection);
+					//console.log(collection);
 				
 				}});
 			this.itemCollections[1].fetch({success:function(collection,response){
@@ -34,7 +34,7 @@
 				collection.tiles=response.items[0].attributes.tiles;
 				collection.center_lat=response.items[0].media_geo_latitude;
 				collection.center_lng=response.items[0].media_geo_longitude;	
-				console.log(collection);
+				//console.log(collection);
 			}});
 		
 			this.set({latlngs: [new L.LatLng( 40.7774,-73.9606), new L.LatLng( _this.get('end_lat'),_this.get('end_lng'))]});
