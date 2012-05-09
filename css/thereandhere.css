@@ -64,6 +64,14 @@ background-color:#99D6FF;
 overflow: hidden;
 }
 
+#bodytext{
+position:fixed;
+left:20px;
+top:160px;
+width:644px;
+background-color:#99D6FF;
+}
+
 #tah-project-desc {
 position:fixed;
 left:20px;
