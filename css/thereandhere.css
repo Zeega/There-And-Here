@@ -207,3 +207,219 @@ color:#FFFFFF;
 
 
 /* ------------------------------------- Contribute ------------------------------------ */
+
+/* -------------------------------- Column One ------------------------------- */
+
+
+#contribute_title {
+position:fixed;
+left:20px;
+top:250px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_titlefield {
+position:fixed;
+left:20px;
+top:280px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_description {
+position:fixed;
+left:20px;
+top:320px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_descriptionfield {
+position:fixed;
+left:20px;
+top:350px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+#contribute_name {
+position:fixed;
+left:20px;
+top:390px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_namefield {
+position:fixed;
+left:20px;
+top:420px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+#contribute_email {
+position:fixed;
+left:20px;
+top:460px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_emailfield {
+position:fixed;
+left:20px;
+top:490px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+/* -------------------------------- Column Two ------------------------------- */
+
+
+#contribute_city1name {
+position:fixed;
+left:250px;
+top:250px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city1namefield {
+position:fixed;
+left:250px;
+top:280px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city1media {
+position:fixed;
+left:250px;
+top:320px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city1mediafield {
+position:fixed;
+left:250px;
+top:350px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city1map {
+position:fixed;
+left:250px;
+top:390px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city1mapfield {
+position:fixed;
+left:250px;
+top:420px;
+width:200px;
+height:200px;
+background-color:#99D6FF;
+}
+
+
+/* -------------------------------- Column Three ------------------------------- */
+
+
+#contribute_city2name {
+position:fixed;
+left:500px;
+top:250px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city2namefield {
+position:fixed;
+left:500px;
+top:280px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city2media {
+position:fixed;
+left:500px;
+top:320px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city2mediafield {
+position:fixed;
+left:500px;
+top:350px;
+width:200px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city2map {
+position:fixed;
+left:500px;
+top:390px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city2mapfield {
+position:fixed;
+left:500px;
+top:420px;
+width:200px;
+height:200px;
+background-color:#99D6FF;
+}
