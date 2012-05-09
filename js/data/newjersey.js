@@ -9,7 +9,8 @@
 			"media_geo_longitude":  -74.511,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.NewJersey"
+				"tiles":"zeega.NewJersey",
+				"zoom":11
 			},
 			"child_items": [
 				{

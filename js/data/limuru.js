@@ -9,7 +9,8 @@
 			"media_geo_longitude": 36.69032890,
 			"child_items_count": 2,
 			"attributes": {
-				"tiles":"zeega.Limuru"
+				"tiles":"zeega.Limuru",
+				"zoom":11
 			},
 			"child_items": [
 				{

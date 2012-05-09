@@ -9,7 +9,8 @@
 			"media_geo_longitude": -96.26240,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.NuevoLaredo"
+				"tiles":"zeega.NuevoLaredo",
+				"zoom":11
 			},
 			"child_items": [
 				{

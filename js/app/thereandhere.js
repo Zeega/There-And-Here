@@ -41,12 +41,10 @@ this.thereandhere = {
 		this.connectionsCollection = new Connections.Collection();
 
 		_.each(lines.features,function(connection){
-			//console.log(connection);
 			_this.connectionsCollection.add(new Connections.Model(connection.properties));
 		});
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
-		//	console.log(this.connectionsCollection);
 	
 	},
 	
@@ -76,10 +74,9 @@ this.thereandhere = {
 	loadMain : function( frame )
 	{
 
-		console.log('Loading Main');
+
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
-		var _this=this;
 		
 		
 		
@@ -96,8 +93,6 @@ this.thereandhere = {
 	home: function(){
 		console.log('goin home');
 		this.router.navigate('',{silent:true});
-		
-		zeega.app.exitProject();
 		$('#tah-zeega-player').empty();
 		$('#tah-player').fadeOut('fast');
 	
@@ -120,6 +115,8 @@ this.thereandhere = {
 		$('#map-top_title').html(connection.start);
 		$('#tah-project-desc').html(connection.description);
 		$('#connection_title').html(connection.start+'————————'+connection.end);
+		
+		
 		this.navMaps=[
 			new Connections.Views.NavMap({
 				collection:connection.itemCollections[0]

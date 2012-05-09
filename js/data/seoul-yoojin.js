@@ -9,7 +9,8 @@
 			"media_geo_longitude": 126.976,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.SeoulYJ"
+				"tiles":"zeega.SeoulYJ",
+				"zoom":11
 			},
 			"child_items": [
 				{
