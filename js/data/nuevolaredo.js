@@ -32,6 +32,16 @@
 							"project_id":425,
 							"frame_id":4491
 					}
+				},{
+					"id": 88,
+					"title": "Story 2: Tegucigalpa, Honduras",
+					"description": "",
+					"media_geo_latitude": 14.0931919,
+					"media_geo_longitude": -87.2012631,
+					"attributes": {
+							"project_id":859,
+							"frame_id":4637
+					}
 				}
 			],
 			"tags": []
