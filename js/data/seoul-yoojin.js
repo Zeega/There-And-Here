@@ -26,8 +26,8 @@
 					"id": 43,
 					"title": "Korean Remittance 50 Years Ago",
 					"description": "",
-					"media_geo_latitude": 37.57044, 
-					"media_geo_longitude": 126.97084,
+					"media_geo_latitude": 37.49660,
+					"media_geo_longitude": 127.02819,
 					"attributes": {
 							"project_id":650,
 							"frame_id":3286
