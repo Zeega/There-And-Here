@@ -139,7 +139,8 @@ this.thereandhere = {
 		});
 		//console.log(this.navMaps[0].collection.at(0));
 		//zeega.app.loadProject(this.navMaps[0].collection.at(0).get('attributes').project_id,{'frameID':this.navMaps[0].collection.at(0).get('attributes').frame_id});
-		
+		$('#tah-zeega-player').empty().append("<iframe class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
+				
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
 				console.log(itemModel.get('attributes').project_id+' has been selected');
@@ -147,7 +148,7 @@ this.thereandhere = {
 					$(this).html(itemModel.get('title')).fadeIn();
 					});
 				
-				$('#tah-zeega-player').empty().append("<iframe width='100%' height='100%' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 				
 				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
@@ -159,7 +160,7 @@ this.thereandhere = {
 				$('#project_title').fadeOut('fast',function(){
 					$(this).html(itemModel.get('title')).fadeIn();
 					});
-				$('#tah-zeega-player').empty().append("<iframe width='100%' height='100%'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
 		
