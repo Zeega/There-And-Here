@@ -47,7 +47,11 @@ this.zeega = {
 		
 	},
 	
+	exitProject: function(){
 	
+		if(this.player)this.player.resetPlayer();
+	
+	},
 	loadProject :function(projectId,options){
 	
 	
@@ -55,11 +59,7 @@ this.zeega = {
 		this.player.loadProjectById(projectId,opt);
 	},
 	
-	exitProject: function(){
-	
-		this.player.resetPlayer();
-	
-	}
+
 	
 	
 }, Backbone.Events)

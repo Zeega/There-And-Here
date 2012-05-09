@@ -12,12 +12,6 @@
 		{
 			_.extend(this,options);
 			
-			
-			
-			
-			
-		
-			
 			this.mapRendered=false;
 			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.griddedpopulation/{z}/{x}/{y}.png',
 	    	this.mapboxAttrib = '',
@@ -206,18 +200,7 @@
 		
 			_.each( _.toArray(this.collection), function(itemModel){
 				
-				/*
-				connectionModel.on('selected',function(){
-					zeega.app.loadProject(connectionModel.id);
-				
-				});
-				*/
-				
-				
 				var circleMarker = new L.CircleMarker(itemModel.latlng(),{color:'red'})
-				
-				//Bind popup to to polyline – could also 
-				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
 				
 				circleMarker.on('click',function(){
 	
