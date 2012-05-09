@@ -9,7 +9,7 @@
 			"media_geo_longitude": 126.976,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.Seoul_Korea"
+				"tiles":"zeega.SeoulYJ"
 			},
 			"child_items": [
 				{
