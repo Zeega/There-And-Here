@@ -1,9 +1,9 @@
 {
 	"items": [
 		{
-			"id": 182,
+			"id": 24,
 			"title": "Akuse, Ghana",
-			"description": "",
+			"description": "These four stories emerged from an interview with Henry Adobor who owns and manages a goat farming business. Each story has its own trajectory related to its geographical location, which you can navigate through from the main page in any order; however, it is always part of another story, giving various readings into the relationships between Ghanaian villages and American cities.",
 			"text": "",
 			"media_geo_latitude": 6.090349,
 			"media_geo_longitude": 0.123512,
@@ -13,7 +13,7 @@
 			},
 			"child_items": [
 				{
-					"id": 164,
+					"id": 25,
 					"title": "Akuse, Ghana ---- Bronx, NY",
 					"description": "",
 					"media_geo_latitude": 6.100,
@@ -24,7 +24,7 @@
 					}
 				},
 				{
-					"id": 164,
+					"id": 26,
 					"title": "Akuse, Ghana",
 					"description": "",
 					"media_geo_latitude": 6.090349,
@@ -35,7 +35,7 @@
 					}
 				},
 				{
-					"id": 165,
+					"id": 27,
 					"title": "Home: Fodome, Ghana",
 					"description": "",
 					"media_geo_latitude": 5.6560, 
