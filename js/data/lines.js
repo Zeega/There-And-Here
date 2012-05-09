@@ -48,7 +48,7 @@ var lines = { "type": "FeatureCollection",
         "end_file":"seoul-david",
         "id":3
         }
-      },
+      }/*,
 	  { "type": "Feature",
       "geometry": {
         "type": "LineString",
@@ -64,7 +64,7 @@ var lines = { "type": "FeatureCollection",
         "end_file":"",
         "id":4
         }
-      },
+      }*/,
 	  { "type": "Feature",
       "geometry": {
         "type": "LineString",
