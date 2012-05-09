@@ -56,6 +56,8 @@
 				scrollWheelZoom:true,
 				doubleClickZoom:true,
 				zoomControl:false,
+				minZoom: 3,
+				maxZoom: 6,
 			
 			});
 	    	this.map.setView(this.latlng, 3).addLayer(this.mapboxLayer);

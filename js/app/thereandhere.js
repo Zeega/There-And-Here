@@ -94,8 +94,11 @@ this.thereandhere = {
 	},
 	
 	home: function(){
-	
+		console.log('goin home');
 		this.router.navigate('',{silent:true});
+		
+		console.log(zeega.app);
+		//zeega.app.exitProject();
 		$('#tah-player').fadeOut('fast');
 	
 	},

@@ -53,6 +53,12 @@ this.zeega = {
 	
 		var opt = options || {};
 		this.player.loadProjectById(projectId,opt);
+	},
+	
+	exitProject: function(){
+	
+		this.player.resetPlayer();
+	
 	}
 	
 	
