@@ -27,8 +27,8 @@
 					"id": 66,
 					"title": "Soliman",
 					"description": "",
-					"media_geo_latitude": 40.80832, 
-					"media_geo_longitude": -73.96177,
+					"media_geo_latitude": 40.80703,  
+					"media_geo_longitude": -73.96095,
 					"attributes": {
 							"project_id":722,
 							"frame_id":3197
@@ -38,8 +38,8 @@
 					"id": 67,
 					"title": "Mohamed",
 					"description": "",
-					"media_geo_latitude": 40.80832, 
-					"media_geo_longitude": -73.96177,
+					"media_geo_latitude": 40.806767, 
+					"media_geo_longitude": -73.960860,
 					"attributes": {
 							"project_id":726,
 							"frame_id":3197
