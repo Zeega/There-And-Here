@@ -38,12 +38,15 @@ this.thereandhere = {
 		var Connections = thereandhere.module("connections");
 		
 		
-		this.connectionsCollection = new Connections.Collection([
-				new Connections.Model({id:48,end_lat:52.519171,end_lng:13.406091199999992})
-			]);
+		this.connectionsCollection = new Connections.Collection();
+
+		_.each(lines.features,function(connection){
+			console.log(connection);
+			_this.connectionsCollection.add(new Connections.Model(connection.properties));
+		});
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
-		
+		console.log(this.connectionsCollection);
 	
 	},
 	
@@ -67,7 +70,7 @@ this.thereandhere = {
 	goToConnection : function(connectionId)
 	{
 		console.log('GO TO Connection: '+connectionId);
-		this.loadPlayer(thereandhere.app.connectionsCollection.at(0));
+		this.loadPlayer(connectionId);
 	},
 
 	loadMain : function( frame )
@@ -99,13 +102,13 @@ this.thereandhere = {
 	
 
 	
-	loadPlayer: function(connection){
+	loadPlayer: function(connectionId){
 	
 
-
+		var connection=this.connectionsCollection.get(connectionId);
 		var _this=this;
 		var Connections = thereandhere.module("connections");
-		this.router.navigate('connection/'+ connection.id, {silent:true});
+		this.router.navigate('connection/'+ connectionId, {silent:true});
 		
 		
 		

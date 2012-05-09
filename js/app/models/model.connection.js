@@ -2,32 +2,21 @@
 
 	Connections.Model = Backbone.Model.extend({
 
-		defaults : {
-			title : 'Untitled',
-			
-			//connections begin in nyc by default
-			
-			
-			begin_lat: 40.7774,
-			begin_lng:-73.9606,
-			selected:false,
-			
-			
-		},
-
 		url: function()
 		{
 			return null;
 		},
 
-		initialize : function()
+		initialize : function(options)
 		{
+			_.extend(this,options);
+			
 			var _this=this;
 			
 	
 			this.itemCollections = [
-				new Connections.Items.Collection({url:'js/data/losangeles.js'}),
-				new Connections.Items.Collection({url:'js/data/tavehua.js'}),
+				new Connections.Items.Collection({url:'js/data/'+this.start_file+'.js'}),
+				new Connections.Items.Collection({url:'js/data/'+this.end_file+'.js'}),
 			];
 			
 			this.itemCollections[0].fetch({success:function(collection,response){
@@ -46,9 +35,6 @@
 				console.log(collection);
 			}});
 		
-			
-			//Create a random endpoint
-			//this.set({end_lat:Math.random()*80, end_lng:(0.5-Math.random())*360});
 			this.set({latlngs: [new L.LatLng( 40.7774,-73.9606), new L.LatLng( _this.get('end_lat'),_this.get('end_lng'))]});
 		},
 

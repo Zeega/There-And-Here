@@ -111,11 +111,7 @@
 				popup.appendTo(div);
 			  });
 			  
-			  layer.on("click",function(e){
-			  	thereandhere.app.loadPlayer(thereandhere.app.connectionsCollection.at(0));
-			 
-			  
-			  });
+			  layer.on("click",function(e){ thereandhere.app.loadPlayer(properties.id);});
 			  
 			  
 			  // Create a mouseout event that undoes the mouseover changes
@@ -222,7 +218,7 @@
 				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
 				
 				circleMarker.on('click',function(){
-				console.log('some clickin be happenin');
+	
 				itemModel.trigger('selected');});
 				_this.map.addLayer(circleMarker);
 					

@@ -8,12 +8,16 @@ var lines = { "type": "FeatureCollection",
           [-118.243, 34.054], [-103.94, 20.18]
           ]
         },
-      "properties": {
+     "properties": {
         "start": "Los Angeles, CA",
         "end": "Jalisco, Mexico",
-        "id":48
+        "description":" this is the description for the project",
+        "start_file":"losangeles",
+        "end_file":"tavehua",
+        "id":1
         }
       },
+      /*
     { "type": "Feature",
       "geometry": {
         "type": "LineString",
@@ -131,6 +135,7 @@ var lines = { "type": "FeatureCollection",
         "id":57
         }
       },
+      */
      ]
    }
    
