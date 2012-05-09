@@ -68,7 +68,7 @@ this.thereandhere = {
 	goToConnection : function(connectionId)
 	{
 		console.log('GO TO Connection: '+connectionId);
-		this.loadPlayer(connectionId);
+		_.delay(function(){thereandhere.app.loadPlayer(connectionId);},2000);
 	},
 
 	loadMain : function( frame )
