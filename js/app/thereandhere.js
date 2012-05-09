@@ -98,7 +98,7 @@ this.thereandhere = {
 		this.router.navigate('',{silent:true});
 		
 		zeega.app.exitProject();
-		
+		$('#tah-zeega-player').empty();
 		$('#tah-player').fadeOut('fast');
 	
 	},
@@ -146,7 +146,10 @@ this.thereandhere = {
 				$('#project_title').fadeOut('fast',function(){
 					$(this).html(itemModel.get('title')).fadeIn();
 					});
-				zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
+				
+				$('#tah-zeega-player').empty().append("<iframe width='100%' height='100%' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				
+				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
 		
 		});
@@ -156,7 +159,8 @@ this.thereandhere = {
 				$('#project_title').fadeOut('fast',function(){
 					$(this).html(itemModel.get('title')).fadeIn();
 					});
-				zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
+				$('#tah-zeega-player').empty().append("<iframe width='100%' height='100%'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
 		
 		});

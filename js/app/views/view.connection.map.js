@@ -204,8 +204,9 @@
 				
 				circleMarker.on('click',function(){
 					console.log('clicked here');
-					itemModel.trigger('selected');});
-					_this.map.addLayer(circleMarker);
+					itemModel.trigger('selected');
+				});
+				_this.map.addLayer(circleMarker);
 					
 			});
 		},
