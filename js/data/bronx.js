@@ -1,9 +1,9 @@
 {
 	"items": [
 		{
-			"id": 182,
+			"id": 21,
 			"title": "Bronx, NY",
-			"description": "",
+			"description": "These four stories emerged from an interview with Henry Adobor who owns and manages a goat farming business. Each story has its own trajectory related to its geographical location, which you can navigate through from the main page in any order; however, it is always part of another story, giving various readings into the relationships between Ghanaian villages and American cities.",
 			"text": "",
 			"media_geo_latitude": 40.836217,
 			"media_geo_longitude": -73.922067,
@@ -13,7 +13,7 @@
 			},
 			"child_items": [
 				{
-					"id": 164,
+					"id": 22,
 					"title": "Bronx, NY ----- Akuse, Ghana",
 					"description": "",
 					"media_geo_latitude": 40.836217,
@@ -24,7 +24,7 @@
 					}
 				},
 				{
-					"id": 164,
+					"id": 23,
 					"title": "Inspiration: Bronx, NY",
 					"description": "",
 					"media_geo_latitude": 40.83555, 
@@ -35,7 +35,7 @@
 					}
 				},
 				{
-					"id": 165,
+					"id": 24,
 					"title": "Home: Connecticut",
 					"description": "",
 					"media_geo_latitude": 41.3838,  

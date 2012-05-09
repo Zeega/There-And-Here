@@ -93,15 +93,15 @@
 						bottom: "85px",
 						left: "50px",
 						zIndex: 1002,
-						backgroundColor: "white",
+						backgroundColor: '#0099FF',
 						padding: "8px",
-						border: "1px solid #ccc"
+						border: "1px solid #FFFFFF"
 					}
 				});
 				// Insert a headline into that popup ADJUST STYLE HERE
 				var hed = $("<div></div>", {
 					text: properties.start + " –––––––––––– " + properties.end,
-					css: {fontSize: "12px"}
+					css: {fontSize: "12px", color: '#FFFFFF'}
 				}).appendTo(popup);
 				// Add the popup to the map
 				popup.appendTo(div);
