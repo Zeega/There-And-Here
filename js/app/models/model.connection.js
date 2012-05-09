@@ -15,8 +15,10 @@
 			
 	
 			this.itemCollections = [
+
 				new Connections.Items.Collection({url:'js/data/'+this.start_file+'.js'}),
 				new Connections.Items.Collection({url:'js/data/'+this.end_file+'.js'}),
+
 			];
 			
 			this.itemCollections[0].fetch({success:function(collection,response){
