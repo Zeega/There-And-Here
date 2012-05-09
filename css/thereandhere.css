@@ -124,86 +124,47 @@ overflow: hidden;
 
 <!------------------------------------- GLOBAL NAVITAGATION ------------------------------------->
 
-#sidllink {
-	position:fixed;
-	float:right;
-	vertical-align: top;
-}
-
-
 #mainmenu {
-	font-size:20px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
-	position:fixed;
-	color:#FFFFFF;
-	left:20px;
-	top:20px;
 }
 
 ul {
 	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	top:20px;
+	left:20px;
+	position: fixed;
 }
 
 ul a {
+	font-size:20px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	color:#FFFFFF;
 	float: left;
 	margin-right: 40px;
 	text-decoration: none;
 }
 
 ul a:hover {
+	color:#0099FF;
 	text-decoration: none;
 	border-bottom:3px solid; 
 }
 
 li {
 	float: left;
+	margin: 0;
+}
+
+
+#sidllink {
+	width:60px;
+	height:60px;
+	float: right;
+	vertical-align: top;
 }
 
 
 <!------------------------------------- NOT SURE IF I NEED THIS ------------------------------------->
 
-
-h1 { 
-	font-size:36px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-h2 { 
-	font-size:24px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-h3 { 
-	font-size:12px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-a:link { 
-	text-decoration: none; 
-	color: #FFFFFF;
-	}
-	
-a:active { 
-	text-decoration: none; 
-	color: #FFFFFF;
-	}
-	
-a:visited { 
-	text-decoration: none; 
-	color: #FFFFFF; 
-	}
-	
-a:hover { 
-	text-decoration: none;
-	color: #0099FF;
-	}
