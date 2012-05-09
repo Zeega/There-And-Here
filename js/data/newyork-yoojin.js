@@ -9,7 +9,7 @@
 			"media_geo_longitude": -73.96177,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.KorillaBBQTrucks"
+				"tiles":"zeega.koreanremittance"
 			},
 			"child_items": [
 				{
@@ -27,8 +27,8 @@
 					"id": 46,
 					"title": "Columbia Korean Students Society",
 					"description": "",
-					"media_geo_latitude": 40.80776, 
-					"media_geo_longitude": -73.96143,
+					"media_geo_latitude": 40.80603, 
+					"media_geo_longitude": -73.96462,
 					"attributes": {
 							"project_id":821,
 							"frame_id":4400
@@ -36,10 +36,10 @@
 				},
 				{
 					"id": 47,
-					"title": "Interview",
+					"title": "Flushing: Interview",
 					"description": "",
-					"media_geo_latitude": 40.80776, 
-					"media_geo_longitude": -73.96143,
+					"media_geo_latitude": 40.76525,  
+					"media_geo_longitude": -73.83313,
 					"attributes": {
 							"project_id":649,
 							"frame_id":3284
@@ -47,10 +47,10 @@
 				},
 				{
 					"id": 48,
-					"title": "Survey of Korean Students",
+					"title": "Korea Town: Survey of Korean Students",
 					"description": "",
-					"media_geo_latitude": 40.80776, 
-					"media_geo_longitude": -73.96143,
+					"media_geo_latitude": 40.74702,  
+					"media_geo_longitude": -73.98553,
 					"attributes": {
 							"project_id":857,
 							"frame_id":4627
