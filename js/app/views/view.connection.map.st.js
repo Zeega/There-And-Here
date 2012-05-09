@@ -112,9 +112,8 @@
 			  });
 			  
 			  layer.on("click",function(e){
-			  	thereandhere.app.loadPlayer(thereandhere.app.connectionsCollection.at(0));
-			 
-			  
+			  	thereandhere.app.loadPlayer(properties.id);
+
 			  });
 			  
 			  
@@ -222,11 +221,11 @@
 				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
 				
 				circleMarker.on('click',function(){
-				console.log('some clickin be happenin');
-				itemModel.trigger('selected');});
-				_this.map.addLayer(circleMarker);
+				
+					itemModel.trigger('selected');});
+					_this.map.addLayer(circleMarker);
 					
-			});
+				});
 		},
 	
 		/* Template (currently just map container) */

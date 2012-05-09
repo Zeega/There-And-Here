@@ -47,13 +47,19 @@ this.zeega = {
 		
 	},
 	
+	exitProject: function(){
 	
+		if(this.player)this.player.resetPlayer();
+	
+	},
 	loadProject :function(projectId,options){
 	
 	
 		var opt = options || {};
 		this.player.loadProjectById(projectId,opt);
-	}
+	},
+	
+
 	
 	
 }, Backbone.Events)

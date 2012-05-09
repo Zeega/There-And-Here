@@ -41,12 +41,12 @@ this.thereandhere = {
 		this.connectionsCollection = new Connections.Collection();
 
 		_.each(lines.features,function(connection){
-			console.log(connection);
+			//console.log(connection);
 			_this.connectionsCollection.add(new Connections.Model(connection.properties));
 		});
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
-		console.log(this.connectionsCollection);
+		//	console.log(this.connectionsCollection);
 	
 	},
 	
@@ -94,8 +94,11 @@ this.thereandhere = {
 	},
 	
 	home: function(){
-	
+		console.log('goin home');
 		this.router.navigate('',{silent:true});
+		
+		zeega.app.exitProject();
+		
 		$('#tah-player').fadeOut('fast');
 	
 	},
@@ -106,13 +109,17 @@ this.thereandhere = {
 	
 
 		var connection=this.connectionsCollection.get(connectionId);
+		
+		console.log(connection);
 		var _this=this;
 		var Connections = thereandhere.module("connections");
 		this.router.navigate('connection/'+ connectionId, {silent:true});
 		
 		
-		
-		
+		$('#map-bottom_title').html(connection.end);
+		$('#map-top_title').html(connection.start);
+		$('#tah-project-desc').html(connection.description);
+		$('#connection_title').html(connection.start+'————————'+connection.end);
 		this.navMaps=[
 			new Connections.Views.NavMap({
 				collection:connection.itemCollections[0]
@@ -123,18 +130,19 @@ this.thereandhere = {
 		];
 			
 		
-		$('#tah-map-top').append(this.navMaps[0].render());
-		$('#tah-map-bottom').append(this.navMaps[1].render());
+		$('#tah-map-top').empty().append(this.navMaps[0].render());
+		$('#tah-map-bottom').empty().append(this.navMaps[1].render());
 		
 		$('#tah-player').fadeIn('fast',function(){
 			_this.navMaps[0].addMap();
 			_this.navMaps[1].addMap();
 		});
+		//console.log(this.navMaps[0].collection.at(0));
+		//zeega.app.loadProject(this.navMaps[0].collection.at(0).get('attributes').project_id,{'frameID':this.navMaps[0].collection.at(0).get('attributes').frame_id});
 		
-		zeega.app.loadProject(257);
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
-				console.log(itemModel.get('attributes').project_id);
+				console.log(itemModel.get('attributes').project_id+' has been selected');
 				$('#project_title').fadeOut('fast',function(){
 					$(this).html(itemModel.get('title')).fadeIn();
 					});

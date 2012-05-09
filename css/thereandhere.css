@@ -125,6 +125,17 @@ overflow: hidden;
 }
 
 
+#zeega-attribution a {
+
+position:fixed;
+bottom:2px;
+right:2px;
+z-index:5000;
+font-size:9px;
+color:white;
+}
+
+
 /* ------------------------------------- GLOBAL NAVITAGATION ------------------------------------ */
 
 #sidllink {
@@ -207,6 +218,7 @@ color:#FFFFFF;
 
 
 /* ------------------------------------- Contribute ------------------------------------ */
+<<<<<<< HEAD
 
 /* -------------------------------- Column One ------------------------------- */
 

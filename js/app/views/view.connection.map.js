@@ -12,12 +12,6 @@
 		{
 			_.extend(this,options);
 			
-			
-			
-			
-			
-		
-			
 			this.mapRendered=false;
 			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.griddedpopulation/{z}/{x}/{y}.png',
 	    	this.mapboxAttrib = '',
@@ -56,6 +50,8 @@
 				scrollWheelZoom:true,
 				doubleClickZoom:true,
 				zoomControl:false,
+				minZoom: 3,
+				maxZoom: 6,
 			
 			});
 	    	this.map.setView(this.latlng, 3).addLayer(this.mapboxLayer);
@@ -204,23 +200,12 @@
 		
 			_.each( _.toArray(this.collection), function(itemModel){
 				
-				/*
-				connectionModel.on('selected',function(){
-					zeega.app.loadProject(connectionModel.id);
-				
-				});
-				*/
-				
-				
 				var circleMarker = new L.CircleMarker(itemModel.latlng(),{color:'red'})
 				
-				//Bind popup to to polyline – could also 
-				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
-				
 				circleMarker.on('click',function(){
-	
-				itemModel.trigger('selected');});
-				_this.map.addLayer(circleMarker);
+					console.log('clicked here');
+					itemModel.trigger('selected');});
+					_this.map.addLayer(circleMarker);
 					
 			});
 		},
