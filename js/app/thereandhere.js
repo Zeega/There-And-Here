@@ -168,7 +168,9 @@ this.thereandhere = {
 		//zeega.app.loadProject(this.navMaps[0].collection.at(0).get('attributes').project_id,{'frameID':this.navMaps[0].collection.at(0).get('attributes').frame_id});
 		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
 		
-		
+		$('#project_title').fadeOut('fast',function(){
+					$(this).html(_this.navMaps[0].collection.at(0).get('title')).fadeIn();
+					});
 		
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
