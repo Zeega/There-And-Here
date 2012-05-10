@@ -9,7 +9,8 @@
 			"media_geo_longitude": -73.96177,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.koreanremittance"
+				"tiles":"zeega.koreanremittance",
+				"zoom":11
 			},
 			"child_items": [
 				{

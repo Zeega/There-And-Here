@@ -9,7 +9,8 @@
 			"media_geo_longitude": -74.130,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.Staten_Island_Ghana"
+				"tiles":"zeega.Staten_Island_Ghana",
+				"zoom":11
 			},
 			"child_items": [
 				{

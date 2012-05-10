@@ -9,7 +9,8 @@
 			"media_geo_longitude": -74.17181100,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.Paterson"
+				"tiles":"zeega.Paterson",
+				"zoom":11
 			},
 			"child_items": [
 				{

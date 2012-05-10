@@ -9,7 +9,8 @@
 			"media_geo_longitude": 0.123512,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.Akuse_Ghana"
+				"tiles":"zeega.Akuse_Ghana",
+				"zoom":11
 			},
 			"child_items": [
 				{

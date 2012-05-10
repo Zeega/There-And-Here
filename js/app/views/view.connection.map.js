@@ -190,7 +190,8 @@
 			var div = $(this.el).find('.navigation-map').get(0);
 
 			this.map = new L.Map(div);
-	    	this.map.setView(this.latlng, 11).addLayer(this.mapboxLayer);
+			
+	    	this.map.setView(this.latlng, this.collection.zoom).addLayer(this.mapboxLayer);
 	    	$('.leaflet-control-attribution').hide();
     		var that=this;
     

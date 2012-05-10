@@ -41,12 +41,10 @@ this.thereandhere = {
 		this.connectionsCollection = new Connections.Collection();
 
 		_.each(lines.features,function(connection){
-			//console.log(connection);
 			_this.connectionsCollection.add(new Connections.Model(connection.properties));
 		});
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
-		//	console.log(this.connectionsCollection);
 	
 	},
 	
@@ -69,24 +67,53 @@ this.thereandhere = {
 	
 	goToConnection : function(connectionId)
 	{
+		$('#main').html(this.connectionsMap.render());
+		this.connectionsMap.addMap();
+		$('#home').click(function(){ thereandhere.app.home();});
+		$('#fullscreen').click(function(){
+			console.log('fff');
+			var docElm = document.getElementById('tah-iframe');
+			if (docElm.requestFullscreen) {
+				docElm.requestFullscreen();
+			}
+			else if (docElm.mozRequestFullScreen) {
+				docElm.mozRequestFullScreen();
+			}
+			else if (docElm.webkitRequestFullScreen) {
+				docElm.webkitRequestFullScreen();
+			}
+		
+		});
 		console.log('GO TO Connection: '+connectionId);
-		this.loadPlayer(connectionId);
+		_.delay(function(){thereandhere.app.loadPlayer(connectionId);},2000);
 	},
 
 	loadMain : function( frame )
 	{
 
-		console.log('Loading Main');
+
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
-		var _this=this;
+		$('#home').click(function(){ thereandhere.app.home();});
+		$('#fullscreen').click(function(){
+			console.log('fff');
+			var docElm = document.getElementById('tah-iframe');
+			if (docElm.requestFullscreen) {
+				docElm.requestFullscreen();
+			}
+			else if (docElm.mozRequestFullScreen) {
+				docElm.mozRequestFullScreen();
+			}
+			else if (docElm.webkitRequestFullScreen) {
+				docElm.webkitRequestFullScreen();
+			}
 		
+		});
 		
 		
 		//UX
 		
 		
-		$('#home').click(function(){ thereandhere.app.home();});
 	
 		
 		
@@ -96,8 +123,6 @@ this.thereandhere = {
 	home: function(){
 		console.log('goin home');
 		this.router.navigate('',{silent:true});
-		
-		zeega.app.exitProject();
 		$('#tah-zeega-player').empty();
 		$('#tah-player').fadeOut('fast');
 	
@@ -120,6 +145,8 @@ this.thereandhere = {
 		$('#map-top_title').html(connection.start);
 		$('#tah-project-desc').html(connection.description);
 		$('#connection_title').html(connection.start+'————————'+connection.end);
+		
+		
 		this.navMaps=[
 			new Connections.Views.NavMap({
 				collection:connection.itemCollections[0]
@@ -139,6 +166,9 @@ this.thereandhere = {
 		});
 		//console.log(this.navMaps[0].collection.at(0));
 		//zeega.app.loadProject(this.navMaps[0].collection.at(0).get('attributes').project_id,{'frameID':this.navMaps[0].collection.at(0).get('attributes').frame_id});
+		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
+		
+		
 		
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
@@ -147,7 +177,7 @@ this.thereandhere = {
 					$(this).html(itemModel.get('title')).fadeIn();
 					});
 				
-				$('#tah-zeega-player').empty().append("<iframe width='100%' height='100%' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 				
 				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
@@ -159,7 +189,7 @@ this.thereandhere = {
 				$('#project_title').fadeOut('fast',function(){
 					$(this).html(itemModel.get('title')).fadeIn();
 					});
-				$('#tah-zeega-player').empty().append("<iframe width='100%' height='100%'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
 		

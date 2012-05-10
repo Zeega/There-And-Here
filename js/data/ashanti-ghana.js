@@ -9,7 +9,8 @@
 			"media_geo_longitude": -1.6272,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.ashanti-ghana"
+				"tiles":"zeega.ashanti-ghana",
+				"zoom":11
 			},
 			"child_items": [
 				{

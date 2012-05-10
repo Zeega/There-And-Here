@@ -9,7 +9,8 @@
 			"media_geo_longitude": -118.299950,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.map-5hl0w2lf"
+				"tiles":"zeega.map-5hl0w2lf",
+				"zoom":11
 			},
 			"child_items": [
 				{
