@@ -43,7 +43,7 @@
 					"media_geo_longitude": -1.521,
 					"attributes": {
 							"project_id":778,
-							"frame_id":3972
+							"frame_id":3971
 					}
 				}
 			],
