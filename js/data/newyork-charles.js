@@ -20,8 +20,8 @@
 					"media_geo_latitude": 40.80345, 
 					"media_geo_longitude": -73.95329,
 					"attributes": {
-							"project_id":595,
-							"frame_id":3660
+							"project_id":320,
+							"frame_id":4890
 					}
 				}
 			],
