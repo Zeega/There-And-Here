@@ -39,8 +39,8 @@
 					"id": 104,
 					"title": "Bonwire, Ghana Kente Village",
 					"description": "",
-					"media_geo_latitude": 7.142,
-					"media_geo_longitude": -1.106,
+					"media_geo_latitude": 6.747, 
+					"media_geo_longitude": -1.521,
 					"attributes": {
 							"project_id":778,
 							"frame_id":3972

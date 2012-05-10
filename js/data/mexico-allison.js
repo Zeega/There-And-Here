@@ -10,15 +10,15 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.map-v9d6mmdh",
-				"zoom":11
+				"zoom":6
 			},
 			"child_items": [
 				{
 					"id": 12,
 					"title": "Intro",
 					"description": "",
-					"media_geo_latitude": 24.1, 
-					"media_geo_longitude": -104.6,
+					"media_geo_latitude": 18.57, 
+					"media_geo_longitude": -98.40,
 					"attributes": {
 							"project_id":746,
 							"frame_id":3726

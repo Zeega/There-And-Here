@@ -10,7 +10,7 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.map-dbal9rgz",
-				"zoom":11
+				"zoom":12
 			},
 			"child_items": [
 				{

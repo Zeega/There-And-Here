@@ -10,7 +10,7 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.halalTRUCKS",
-				"zoom":11
+				"zoom":16
 			},
 			"child_items": [
 				{
