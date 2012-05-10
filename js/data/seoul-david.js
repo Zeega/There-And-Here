@@ -10,7 +10,7 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.Seoul_Korea",
-				"zoom":11
+				"zoom":10
 			},
 			"child_items": [
 				{

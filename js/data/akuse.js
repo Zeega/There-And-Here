@@ -10,7 +10,7 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.Akuse_Ghana",
-				"zoom":11
+				"zoom":8
 			},
 			"child_items": [
 				{

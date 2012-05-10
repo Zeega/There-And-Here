@@ -10,7 +10,7 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.NuevoLaredo",
-				"zoom":11
+				"zoom":4
 			},
 			"child_items": [
 				{

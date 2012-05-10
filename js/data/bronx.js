@@ -10,15 +10,15 @@
 			"child_items_count": 4,
 			"attributes": {
 				"tiles":"zeega.map-yymad4fq",
-				"zoom":11
+				"zoom":12
 			},
 			"child_items": [
 				{
 					"id": 22,
 					"title": "Bronx, NY ----- Akuse, Ghana",
 					"description": "",
-					"media_geo_latitude": 40.836217,
-					"media_geo_longitude": -73.922067,
+					"media_geo_latitude": 40.8510,
+					"media_geo_longitude": -73.8611,
 					"attributes": {
 							"project_id":783,
 							"frame_id":4074
