@@ -113,7 +113,7 @@ var lines = { "type": "FeatureCollection",
         "zoom":11,"id":7
         }
       },
-	  { "type": "Feature",
+	 /* { "type": "Feature",
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -128,7 +128,7 @@ var lines = { "type": "FeatureCollection",
         "end_file":"nuevolaredo",
         "zoom":11,"id":8
         }
-      },
+      },*/
 	  { "type": "Feature",
       "geometry": {
         "type": "LineString",

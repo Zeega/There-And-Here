@@ -64,7 +64,7 @@
 			var featureLayer = new L.GeoJSON();
 			 var defaultStyle = {
 				color: "#0099FF",
-				weight: 4,
+				weight: 3.5,
 				opacity: 0.6,
 				fillOpacity: 0.1,
 				fillColor: "#0099FF"
@@ -72,7 +72,7 @@
 			
 			var highlightStyle = {
 				color: '#0099FF', 
-				weight: 5,
+				weight: 4.5,
 				opacity: 0.6,
 				fillOpacity: 0.65,
 				fillColor: '#0099FF'
