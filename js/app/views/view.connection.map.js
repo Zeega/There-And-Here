@@ -64,11 +64,9 @@
 			var featureLayer = new L.GeoJSON();
 			 var defaultStyle = {
 				color: "#0099FF",
-<<<<<<< HEAD
-				weight: 5,
-=======
+
 				weight: 3.5,
->>>>>>> GAexampleProj
+
 				opacity: 0.6,
 				fillOpacity: 0.1,
 				fillColor: "#0099FF"
@@ -76,11 +74,9 @@
 			
 			var highlightStyle = {
 				color: '#0099FF', 
-<<<<<<< HEAD
-				weight: 6,
-=======
+
 				weight: 4.5,
->>>>>>> GAexampleProj
+
 				opacity: 0.6,
 				fillOpacity: 0.65,
 				fillColor: '#0099FF'
@@ -101,15 +97,11 @@
 						bottom: "100px",
 						left: "80px",
 						zIndex: 1002,
-<<<<<<< HEAD
-						backgroundColor: "#FFF",
-						padding: "15px",
-						border: "2px solid #0099ff"
-=======
+
 						backgroundColor: '#0099FF',
 						padding: "8px",
 						border: "1px solid #FFFFFF"
->>>>>>> GAexampleProj
+
 					}
 				});
 				// Insert a headline into that popup ADJUST STYLE HERE
