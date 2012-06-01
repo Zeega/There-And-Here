@@ -49,7 +49,7 @@
 			
 				scrollWheelZoom:true,
 				doubleClickZoom:true,
-				zoomControl:false,
+				zoomControl:true,
 				minZoom: 3,
 				maxZoom: 6,
 			
