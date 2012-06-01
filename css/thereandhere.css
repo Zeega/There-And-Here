@@ -179,9 +179,18 @@ z-index:10001;
 ul {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+	padding: 20;
 	top:20px;
 	left:0px;
+	position: fixed;
+}
+
+#mainmapul {
+	list-style-type: none;
+	margin: 0;
+	padding: 20;
+	top:20px;
+	left:50px;
 	position: fixed;
 }
 
@@ -257,7 +266,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_titlefield {
+#/*contribute_titlefield*/ {
 position:fixed;
 left:20px;
 top:280px;
