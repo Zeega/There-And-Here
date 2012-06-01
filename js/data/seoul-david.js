@@ -4,6 +4,7 @@
 			"id": 31,
 			"title": "Incheon & Seoul, Korea",
 			"description": "South Korea has experienced dramatic economic development in recent decades and its GDP has risen to rival the top 10 countries globally, almost on par with the United States.  South Koreans, nowadays, have therefore been less willing to immigrate to the U.S. to make more capital. Instead, fathers have been sending kids and mothers to the U.S. for EDUCATION as the remittance while staying back in Korea and making money to support them. These men are a new phenomenon and are called /'Wild Geese Fathers,/' or /'Girogi Fathers./'",
+			"author": "unknown",
 			"text": "",
 			"media_geo_latitude": 37.562, 
 			"media_geo_longitude": 126.976,

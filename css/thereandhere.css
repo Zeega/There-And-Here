@@ -21,13 +21,13 @@
 
 /*------------------------------------- FOR PROJECT PAGE ----------------------------------*/
 body {
-background-image: url('http://ear-chitecture.com/downloads/there_here_bg.png');
+background-image: url('../images/there_here_bg.png');
 font-family: Helvetica, Arial, sans-serif;
 }
 	
 	
 #tah-player{
-background-image: url('http://ear-chitecture.com/downloads/there_here_bg.png');
+background-image: url('../images/there_here_bg.png');
 display:none;
 z-index:1000;
 margin: 0;	
@@ -51,7 +51,7 @@ left: 640px;
 cursor:pointer;
 }
 
-#connection_title {
+#connection-title {
 position:fixed;
 left:20px;
 top:80px;
@@ -62,7 +62,7 @@ text-align: left;
 color:#0099FF;
 }
 
-#project_title {
+#project-title-wrapper {
 position:fixed;
 left:20px;
 top:130px;
@@ -96,7 +96,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#map-top_title {
+#map-top2px dotted #808184;title {
 position:fixed;
 left:684px;
 top:130px;
@@ -116,7 +116,7 @@ background-color:#99D6FF;
 overflow: hidden;
 }
 
-#map-bottom_title {
+#map-bottom-title {
 position:fixed;
 left:684px;
 top:420px;
@@ -253,7 +253,7 @@ color:#FFFFFF;
 /* -------------------------------- Column One ------------------------------- */
 
 
-#contribute_title {
+#contribute-title {
 position:fixed;
 left:20px;
 top:250px;
@@ -264,7 +264,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#/*contribute_titlefield*/ {
+#/*contribute2px dotted #808184;titlefield*/ {
 position:fixed;
 left:20px;
 top:280px;
@@ -274,7 +274,7 @@ background-color:#FFFFFF;
 }
 
 
-#contribute_description {
+#contribute-description {
 position:fixed;
 left:20px;
 top:320px;
@@ -285,7 +285,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_descriptionfield {
+#contribute-descriptionfield {
 position:fixed;
 left:20px;
 top:350px;
@@ -294,7 +294,7 @@ height:20px;
 background-color:#FFFFFF;
 }
 
-#contribute_name {
+#contribute-name {
 position:fixed;
 left:20px;
 top:390px;
@@ -305,7 +305,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_namefield {
+#contribute-namefield {
 position:fixed;
 left:20px;
 top:420px;
@@ -314,7 +314,7 @@ height:20px;
 background-color:#FFFFFF;
 }
 
-#contribute_email {
+#contribute-email {
 position:fixed;
 left:20px;
 top:460px;
@@ -325,7 +325,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_emailfield {
+#contribute-emailfield {
 position:fixed;
 left:20px;
 top:490px;
@@ -338,7 +338,7 @@ background-color:#FFFFFF;
 /* -------------------------------- Column Two ------------------------------- */
 
 
-#contribute_city1name {
+#contribute-city1name {
 position:fixed;
 left:348px;
 top:250px;
@@ -349,7 +349,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_city1namefield {
+#contribute-city1namefield {
 position:fixed;
 left:348px;
 top:280px;
@@ -359,7 +359,7 @@ background-color:#FFFFFF;
 }
 
 
-#contribute_city1media {
+#contribute-city1media {
 position:fixed;
 left:348px;
 top:320px;
@@ -370,7 +370,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_city1mediafield {
+#contribute-city1mediafield {
 position:fixed;
 left:348px;
 top:350px;
@@ -380,7 +380,7 @@ background-color:#FFFFFF;
 }
 
 
-#contribute_city1map {
+#contribute-city1map {
 position:fixed;
 left:348px;
 top:390px;
@@ -391,7 +391,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_city1mapfield {
+#contribute-city1mapfield {
 position:fixed;
 left:348px;
 top:420px;
@@ -404,7 +404,7 @@ background-color:#99D6FF;
 /* -------------------------------- Column Three ------------------------------- */
 
 
-#contribute_city2name {
+#contribute-city2name {
 position:fixed;
 left:676px;
 top:250px;
@@ -415,7 +415,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_city2namefield {
+#contribute-city2namefield {
 position:fixed;
 left:676px;
 top:280px;
@@ -425,7 +425,7 @@ background-color:#FFFFFF;
 }
 
 
-#contribute_city2media {
+#contribute-city2media {
 position:fixed;
 left:676px;
 top:320px;
@@ -436,7 +436,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_city2mediafield {
+#contribute2px dotted #808184;city2mediafield {
 position:fixed;
 left:676px;
 top:350px;
@@ -446,7 +446,7 @@ background-color:#FFFFFF;
 }
 
 
-#contribute_city2map {
+#contribute2px dotted #808184;city2map {
 position:fixed;
 left:676px;
 top:390px;
@@ -457,7 +457,7 @@ text-align: left;
 color:#FFFFFF;
 }
 
-#contribute_city2mapfield {
+#contribute2px dotted #808184;city2mapfield {
 position:fixed;
 left:676px;
 top:420px;

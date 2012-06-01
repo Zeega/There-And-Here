@@ -3,6 +3,7 @@
 		{
 			"id": 101,
 			"title": "The Kente Road",
+			"author": "unknown",
 			"description": "The Kente Cloth is the traditional clothing culture of Akan people, especially dominant in the Western Africa region. These villages still work based on strong family bond, mainly men and boys working on it. The Kente villages in Bonwire, Agotime-Kpetoe and Ewe region of Ghana are still vibrant and its fabrics are exported to the other countries due to its authentic. Here, in Staten Island, is the family of Kente weavers from Bonwire in Ghana. They introduce traditional looms for weaving strips through the exhibition “AKWAABA : Weaving Unity between Ghana and Staten Island”, interacting with Staten Island communities.",
 			"text": "",
 			"media_geo_latitude": 6.6865,

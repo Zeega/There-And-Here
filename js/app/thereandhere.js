@@ -21,23 +21,16 @@ this.thereandhere = {
   // Keep active application instances namespaced under an app object.
   app: _.extend({
 	
-	
 
-
-	//this function is called once all the js files are sucessfully loaded
-	init : function()
-	{
+	init : function(){
 		this.loadModules();
 		this.isLoaded = true
 		this.startRouter();
 	},
 	
-	loadModules : function()
-	{
+	loadModules : function(){
 		var _this=this;
 		var Connections = thereandhere.module("connections");
-		
-		
 		this.connectionsCollection = new Connections.Collection();
 
 		_.each(lines.features,function(connection){
@@ -48,8 +41,7 @@ this.thereandhere = {
 	
 	},
 	
-	startRouter: function()
-	{
+	startRouter: function(){
 		var _this = this;
 		var Router = Backbone.Router.extend({
 			routes: {
@@ -65,8 +57,7 @@ this.thereandhere = {
 		Backbone.history.start();
 	},
 	
-	goToConnection : function(connectionId)
-	{
+	goToConnection : function(connectionId){
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
 		$('#home').click(function(){ thereandhere.app.home();});
@@ -88,8 +79,7 @@ this.thereandhere = {
 		_.delay(function(){thereandhere.app.loadPlayer(connectionId);},2000);
 	},
 
-	loadMain : function( frame )
-	{
+	loadMain : function( frame ){
 
 
 		$('#main').html(this.connectionsMap.render());
@@ -109,15 +99,7 @@ this.thereandhere = {
 			}
 		
 		});
-		
-		
-		//UX
-		
-		
-	
-		
-		
-		
+			
 	},
 	
 	home: function(){
@@ -127,24 +109,22 @@ this.thereandhere = {
 		$('#tah-player').fadeOut('fast');
 	
 	},
-	
 
-	
 	loadPlayer: function(connectionId){
 	
 
 		var connection=this.connectionsCollection.get(connectionId);
-		
-		console.log(connection);
+
 		var _this=this;
 		var Connections = thereandhere.module("connections");
 		this.router.navigate('connection/'+ connectionId, {silent:true});
 		
 		
-		$('#map-bottom_title').html(connection.end);
-		$('#map-top_title').html(connection.start);
+		$('#map-bottom-title').html(connection.end);
+		$('#map-top-title').html(connection.start);
 		$('#tah-project-desc').html(connection.description);
-		$('#connection_title').html(connection.start+'————————'+connection.end);
+		$('#project-author').html(connection.author);
+		$('#connection-title').html(connection.start+'————————'+connection.end);
 		
 		
 		this.navMaps=[
@@ -160,45 +140,29 @@ this.thereandhere = {
 		$('#tah-map-top').empty().append(this.navMaps[0].render());
 		$('#tah-map-bottom').empty().append(this.navMaps[1].render());
 		
-		$('#tah-player').fadeIn('fast',function(){
+		$('#tah-player').fadeIn('fast',function(){ 
 			_this.navMaps[0].addMap();
 			_this.navMaps[1].addMap();
 		});
-		//console.log(this.navMaps[0].collection.at(0));
-		//zeega.app.loadProject(this.navMaps[0].collection.at(0).get('attributes').project_id,{'frameID':this.navMaps[0].collection.at(0).get('attributes').frame_id});
+		
 		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
 		
-		$('#project_title').fadeOut('fast',function(){
-					$(this).html(_this.navMaps[0].collection.at(0).get('title')).fadeIn();
-					});
+		$('#project-title').fadeOut('fast',function(){ $(this).html(_this.navMaps[0].collection.at(0).get('title')).fadeIn();});
 		
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
-				console.log(itemModel.get('attributes').project_id+' has been selected');
-				$('#project_title').fadeOut('fast',function(){
-					$(this).html(itemModel.get('title')).fadeIn();
-					});
-				
+				$('#project_title').fadeOut('fast',function(){ $(this).html(itemModel.get('title')).fadeIn();});
 				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
-				
-				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
+			});
 		});
 		
-		});
 		_.each( _.toArray(this.navMaps[1].collection), function(itemModel){		
 			itemModel.on('selected',function(){
-				console.log(itemModel.get('attributes').project_id);
-				$('#project_title').fadeOut('fast',function(){
-					$(this).html(itemModel.get('title')).fadeIn();
-					});
+				$('#project_title').fadeOut('fast',function(){$(this).html(itemModel.get('title')).fadeIn();});
 				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
-				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
-		});
-		
+			});	
 		});
 	},
-	
-	
 	
 }, Backbone.Events)
 

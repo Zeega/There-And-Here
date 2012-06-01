@@ -3,6 +3,7 @@
 		{
 			"id": 95,
 			"title": "Los Angeles",
+			"author": "unknown",
 			"description": "The village of Santa Maria Tavehua, Oaxaca, now estimates that nearly 60% of its 300 residents live in Los Angeles, California. This project explores the way a single community negotiates an international divide, the cultural ties that persist, and the transformations that have taken place in daily life on both sides of the border. It is narrated by a second-generation Tavehuan who grew up in South Central Los Angeles.",
 			"text": "",
 			"media_geo_latitude": 34.005999,

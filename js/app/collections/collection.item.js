@@ -37,20 +37,16 @@
 		initialize : function(options)
 		{
 			_.extend(this,options);
-			
-			
-			
-			
-
 		},
 		
-		/*
-		url: function()
+		parse: function(data)
 		{
-			console.log(this.id);
-			return "http://dev.zeega.org/james/web/api/collections/"+this.id;
+			this.tiles=data.items[0].tiles;
+			this.zoom=data.items[0].attributes.zoom;
+			this.center_lat=data.items[0].media_geo_latitude;
+			this.center_lng=data.items[0].media_geo_longitude;
+			return data.items[0].child_items;
 		},
-		*/
 		
 		
 

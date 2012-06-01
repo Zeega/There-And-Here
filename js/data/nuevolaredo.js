@@ -4,6 +4,7 @@
 			"id": 81,
 			"title": "Nuevo Laredo, Mexico",
 			"description": "Our topic is mainly about forced migration issue caused by poor security problem in Central America.  And there are three different categories which include political, economic and cultural stories. Firstly, we introduce the political situation between USA and Central American countries and focus on Kevin’s story: it is about Honduran child migrants as they journey through Mexican route to the U.S. on a freight train they call /'The Beast./'  Second, we want to talk about how difficult those migrants settle down in a new country and remittance introducing a Honduran family’s story (Tijuana, Texas border) and Honduran community in N.J (Sterling chase horse Farm). Third, the cultural category is about the successful Honduran community in New York, and we introduce Honduran food carts and restaurants spreading in South Bronx and N.J. ",
+			"author": "unknown",
 			"text": "",
 			"media_geo_latitude": 17.24077,
 			"media_geo_longitude": -96.26240,
