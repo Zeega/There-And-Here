@@ -12,12 +12,6 @@
 		{
 			_.extend(this,options);
 			
-			
-			
-			
-			
-		
-			
 			this.mapRendered=false;
 			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/zeega.griddedpopulation/{z}/{x}/{y}.png',
 	    	this.mapboxAttrib = '',
@@ -55,7 +49,9 @@
 			
 				scrollWheelZoom:true,
 				doubleClickZoom:true,
-				zoomControl:false,
+				zoomControl:true,
+				minZoom: 3,
+				maxZoom: 6,
 			
 			});
 	    	this.map.setView(this.latlng, 3).addLayer(this.mapboxLayer);
@@ -68,7 +64,11 @@
 			var featureLayer = new L.GeoJSON();
 			 var defaultStyle = {
 				color: "#0099FF",
+<<<<<<< HEAD
 				weight: 5,
+=======
+				weight: 3.5,
+>>>>>>> GAexampleProj
 				opacity: 0.6,
 				fillOpacity: 0.1,
 				fillColor: "#0099FF"
@@ -76,7 +76,11 @@
 			
 			var highlightStyle = {
 				color: '#0099FF', 
+<<<<<<< HEAD
 				weight: 6,
+=======
+				weight: 4.5,
+>>>>>>> GAexampleProj
 				opacity: 0.6,
 				fillOpacity: 0.65,
 				fillColor: '#0099FF'
@@ -97,25 +101,27 @@
 						bottom: "100px",
 						left: "80px",
 						zIndex: 1002,
+<<<<<<< HEAD
 						backgroundColor: "#FFF",
 						padding: "15px",
 						border: "2px solid #0099ff"
+=======
+						backgroundColor: '#0099FF',
+						padding: "8px",
+						border: "1px solid #FFFFFF"
+>>>>>>> GAexampleProj
 					}
 				});
 				// Insert a headline into that popup ADJUST STYLE HERE
 				var hed = $("<div></div>", {
 					text: properties.start + " –––––––––––– " + properties.end,
-					css: {fontSize: "12px"}
+					css: {fontSize: "12px", color: '#FFFFFF'}
 				}).appendTo(popup);
 				// Add the popup to the map
 				popup.appendTo(div);
 			  });
 			  
-			  layer.on("click",function(e){
-			  	thereandhere.app.loadPlayer(thereandhere.app.connectionsCollection.at(0));
-			 
-			  
-			  });
+			  layer.on("click",function(e){ thereandhere.app.loadPlayer(properties.id);});
 			  
 			  
 			  // Create a mouseout event that undoes the mouseover changes
@@ -123,7 +129,7 @@
 				// Start by reverting the style back
 				layer.setStyle(defaultStyle); 
 				// And then destroying the popup
-				console.log(properties.id);
+				
 				$("#popup-" + properties.id).remove();
 			  });
 			  // Close the "anonymous" wrapper function, and call it while passing
@@ -160,14 +166,8 @@
 			
 			
 		
+				this.geoLocated=true;
 			
-			this.mapRendered=false;
-			this.mapboxUrl = 'http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png',
-	    	this.mapboxAttrib = '',
-	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, attribution: this.mapboxAttrib});
-			this.geoLocated=true;
-		
-			this.latlng = new L.LatLng( this.center_lat,this.center_lng);
 		
 			//use template to clone the database items into
 			var template = _.template( this.getTemplate() );
@@ -190,35 +190,37 @@
 	
 		addMap:function()
 		{
-			console.log('adding map');
+			this.mapRendered=false;
+			this.mapboxUrl = 'http://{s}.tiles.mapbox.com/v2/'+this.collection.tiles+'/{z}/{x}/{y}.png',
+	    	this.mapboxAttrib = '',
+	   		this.mapboxLayer = new L.TileLayer(this.mapboxUrl, {maxZoom: 18, attribution: this.mapboxAttrib});
+		
+			console.log(this.collection);
+		
+			this.latlng = new L.LatLng( this.collection.center_lat,this.collection.center_lng);
+
+			
 			this.mapRendered=true;
 			var div = $(this.el).find('.navigation-map').get(0);
 
 			this.map = new L.Map(div);
-	    	this.map.setView(this.latlng, 11).addLayer(this.mapboxLayer);
+			
+	    	this.map.setView(this.latlng, this.collection.zoom).addLayer(this.mapboxLayer);
 	    	$('.leaflet-control-attribution').hide();
     		var that=this;
     
 			//Draw connections on the map
-			console.log(this.collection);
+		
 			var _this=this;
-			console.log(this);
+		
 			_.each( _.toArray(this.collection), function(itemModel){
-				
-				/*
-				connectionModel.on('selected',function(){
-					zeega.app.loadProject(connectionModel.id);
-				
-				});
-				*/
-				
 				
 				var circleMarker = new L.CircleMarker(itemModel.latlng(),{color:'red'})
 				
-				//Bind popup to to polyline – could also 
-				//polyline.bindPopup(new Connections.Views.Popup({model:connectionModel}).render());
-				
-				circleMarker.on('click',function(){itemModel.trigger('selected');});
+				circleMarker.on('click',function(){
+					console.log('clicked here');
+					itemModel.trigger('selected');
+				});
 				_this.map.addLayer(circleMarker);
 					
 			});

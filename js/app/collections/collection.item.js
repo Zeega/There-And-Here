@@ -20,8 +20,7 @@
 		latlng: function()
 		
 		{
-			console.log(this);
-			console.log(this.get('media_geo_latitude'));
+			
 			return  new L.LatLng( parseFloat(this.get('media_geo_latitude')),parseFloat(this.get('media_geo_longitude')));
 			
 		}
@@ -45,12 +44,13 @@
 
 		},
 		
+		/*
 		url: function()
 		{
 			console.log(this.id);
 			return "http://dev.zeega.org/james/web/api/collections/"+this.id;
 		},
-		
+		*/
 		
 		
 

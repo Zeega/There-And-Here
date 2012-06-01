@@ -38,13 +38,13 @@ this.thereandhere = {
 		var Connections = thereandhere.module("connections");
 		
 		
-		this.connectionsCollection = new Connections.Collection([
-				new Connections.Model({id:48,end_lat:52.519171,end_lng:13.406091199999992}),
-				new Connections.Model({id:49,end_lat:52.519171,end_lng:113.406091199999992})
-			]);
+		this.connectionsCollection = new Connections.Collection();
+
+		_.each(lines.features,function(connection){
+			_this.connectionsCollection.add(new Connections.Model(connection.properties));
+		});
 
 		this.connectionsMap=new Connections.Views.Map({collection:this.connectionsCollection});
-		
 	
 	},
 	
@@ -67,62 +67,135 @@ this.thereandhere = {
 	
 	goToConnection : function(connectionId)
 	{
-		console.log('GO TO Connection: '+connectionId)
+		$('#main').html(this.connectionsMap.render());
+		this.connectionsMap.addMap();
+		$('#home').click(function(){ thereandhere.app.home();});
+		$('#fullscreen').click(function(){
+			console.log('fff');
+			var docElm = document.getElementById('tah-iframe');
+			if (docElm.requestFullscreen) {
+				docElm.requestFullscreen();
+			}
+			else if (docElm.mozRequestFullScreen) {
+				docElm.mozRequestFullScreen();
+			}
+			else if (docElm.webkitRequestFullScreen) {
+				docElm.webkitRequestFullScreen();
+			}
+		
+		});
+		console.log('GO TO Connection: '+connectionId);
+		_.delay(function(){thereandhere.app.loadPlayer(connectionId);},2000);
 	},
 
 	loadMain : function( frame )
 	{
 
-		console.log('Loading Main');
+
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
+		$('#home').click(function(){ thereandhere.app.home();});
+		$('#fullscreen').click(function(){
+			console.log('fff');
+			var docElm = document.getElementById('tah-iframe');
+			if (docElm.requestFullscreen) {
+				docElm.requestFullscreen();
+			}
+			else if (docElm.mozRequestFullScreen) {
+				docElm.mozRequestFullScreen();
+			}
+			else if (docElm.webkitRequestFullScreen) {
+				docElm.webkitRequestFullScreen();
+			}
 		
+		});
+		
+		
+		//UX
+		
+		
+	
+		
+		
+		
+	},
+	
+	home: function(){
+		console.log('goin home');
+		this.router.navigate('',{silent:true});
+		$('#tah-zeega-player').empty();
+		$('#tah-player').fadeOut('fast');
+	
 	},
 	
 
 	
-	loadPlayer: function(connection){
+	loadPlayer: function(connectionId){
 	
-	
+
+		var connection=this.connectionsCollection.get(connectionId);
+		
+		console.log(connection);
 		var _this=this;
 		var Connections = thereandhere.module("connections");
+		this.router.navigate('connection/'+ connectionId, {silent:true});
 		
 		
-		
+		$('#map-bottom_title').html(connection.end);
+		$('#map-top_title').html(connection.start);
+		$('#tah-project-desc').html(connection.description);
+		$('#connection_title').html(connection.start+'————————'+connection.end);
 		
 		
 		this.navMaps=[
 			new Connections.Views.NavMap({
-				collection:connection.itemCollections[0],
-				center_lat:connection.get('begin_lat'),
-				center_lng:connection.get('begin_lng')
+				collection:connection.itemCollections[0]
 			}),
 			new Connections.Views.NavMap({
-				collection:connection.itemCollections[1],
-				center_lat:connection.get('end_lat'),
-				center_lng:connection.get('end_lng')
+				collection:connection.itemCollections[1]
 			})
 		];
 			
 		
-		$('#tah-map-top').append(this.navMaps[0].render());
-		$('#tah-map-bottom').append(this.navMaps[1].render());
+		$('#tah-map-top').empty().append(this.navMaps[0].render());
+		$('#tah-map-bottom').empty().append(this.navMaps[1].render());
 		
 		$('#tah-player').fadeIn('fast',function(){
 			_this.navMaps[0].addMap();
 			_this.navMaps[1].addMap();
 		});
+		//console.log(this.navMaps[0].collection.at(0));
+		//zeega.app.loadProject(this.navMaps[0].collection.at(0).get('attributes').project_id,{'frameID':this.navMaps[0].collection.at(0).get('attributes').frame_id});
+		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
 		
-		zeega.app.loadProject(48);
+		$('#project_title').fadeOut('fast',function(){
+					$(this).html(_this.navMaps[0].collection.at(0).get('title')).fadeIn();
+					});
+		
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
-				console.log(itemModel.id);
-				if(itemModel.id%2==0)zeega.app.loadProject(80);
-				else zeega.app.loadProject(48);
+				console.log(itemModel.get('attributes').project_id+' has been selected');
+				$('#project_title').fadeOut('fast',function(){
+					$(this).html(itemModel.get('title')).fadeIn();
+					});
+				
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				
+				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
 		});
 		
 		});
-	
+		_.each( _.toArray(this.navMaps[1].collection), function(itemModel){		
+			itemModel.on('selected',function(){
+				console.log(itemModel.get('attributes').project_id);
+				$('#project_title').fadeOut('fast',function(){
+					$(this).html(itemModel.get('title')).fadeIn();
+					});
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				//zeega.app.loadProject(itemModel.get('attributes').project_id,{'frameID':itemModel.get('attributes').frame_id});
+		});
+		
+		});
 	},
 	
 	

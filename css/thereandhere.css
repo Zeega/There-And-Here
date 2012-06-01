@@ -4,6 +4,7 @@
 	width:100%;
 	min-height:500px;
 	height:100%;
+	
 }
 
 .navigation-map {
@@ -19,17 +20,34 @@
 }
 
 /*------------------------------------- FOR PROJECT PAGE ----------------------------------*/
-
+body {
+background-image: url('http://ear-chitecture.com/downloads/there_here_bg.png');
+}
+	
+	
 #tah-player{
+background-image: url('http://ear-chitecture.com/downloads/there_here_bg.png');
 display:none;
 z-index:1000;
-background-image: url('http://ear-chitecture.com/downloads/there_here_bg.png');
-	margin: 0;	
+margin: 0;	
 width:100%;
 height:100%;
 min-height:500px;
 position: fixed;
+display:none;
+}
 
+
+#fullscreen{
+background-image: url('../images/fullscreen.png');
+background-size:cover;
+position:absolute;
+z-index:2000;
+width:24px;
+height:24px;
+top: 160px;
+left: 640px;
+cursor:pointer;
 }
 
 #connection_title {
@@ -47,7 +65,7 @@ color:#0099FF;
 position:fixed;
 left:20px;
 top:130px;
-font-size:24px;
+font-size:20px;
 font-weight: bold;
 font-family: Helvetica, Arial, sans-serif;
 text-align: left;
@@ -82,7 +100,7 @@ color:#FFFFFF;
 position:fixed;
 left:684px;
 top:130px;
-font-size:24px;
+font-size:20px;
 font-weight: bold;
 font-family: Helvetica, Arial, sans-serif;
 text-align: left;
@@ -103,7 +121,7 @@ overflow: hidden;
 position:fixed;
 left:684px;
 top:420px;
-font-size:24px;
+font-size:20px;
 font-weight: bold;
 font-family: Helvetica, Arial, sans-serif;
 text-align: left;
@@ -121,7 +139,36 @@ overflow: hidden;
 }
 
 
+#zeega-attribution a {
+
+position:fixed;
+bottom:2px;
+right:2px;
+z-index:5000;
+font-size:9px;
+color:white;
+}
+
+
+.tah-iframe {
+width:100%;
+height:100%;
+border:none;
+
+
+}
+
+
 /* ------------------------------------- GLOBAL NAVITAGATION ------------------------------------ */
+
+#sidllink {
+	right: 0px;
+	width:60px;
+	height:60px;
+	position: fixed;
+	vertical-align: top;
+	z-index: 50000;
+}
 
 #mainmenu {
 
@@ -132,13 +179,23 @@ z-index:10001;
 ul {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+	padding: 20;
 	top:20px;
-	left:20px;
+	left:0px;
+	position: fixed;
+}
+
+#mainmapul {
+	list-style-type: none;
+	margin: 0;
+	padding: 20;
+	top:20px;
+	left:50px;
 	position: fixed;
 }
 
 ul a {
+	list-style-type: none;
 	font-size:20px;
 	font-weight: bold;
 	font-family: Helvetica, Arial, sans-serif;
@@ -155,62 +212,258 @@ ul a:hover {
 }
 
 li {
+	list-style-type: none;
 	float: left;
 	margin: 0;
 }
 
 
-#sidllink {
-	width:60px;
-	height:60px;
-	float: right;
-	vertical-align: top;
+/* ------------------------------------- Contribute ------------------------------------ */
+
+#bodytext{
+position:fixed;
+left:20px;
+line-height:30px;
+top:130px;
+width:644px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
 }
 
-
-/* ------------------------------------- NOT SURE IF I NEED THIS ------------------------------------*/
-
-
-h1 { 
-	font-size:36px;
+#bodytext a {
+	font-size:20px;
 	font-weight: bold;
 	font-family: Helvetica, Arial, sans-serif;
-	text-align: left;
 	color:#FFFFFF;
-}
-
-h2 { 
-	font-size:24px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-h3 { 
-	font-size:12px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-a:link { 
-	text-decoration: none; 
-	color: #FFFFFF;
-	}
-	
-a:active { 
-	text-decoration: none; 
-	color: #FFFFFF;
-	}
-	
-a:visited { 
-	text-decoration: none; 
-	color: #FFFFFF; 
-	}
-	
-a:hover { 
 	text-decoration: none;
-	color: #0099FF;
-	}
+	border-bottom:3px solid; 
+}
+
+#bodytext a:hover {
+	color:#0099FF;
+	text-decoration: none;
+	border-bottom:3px solid; 
+}
+
+
+/* ------------------------------------- Contribute ------------------------------------ */
+
+
+/* -------------------------------- Column One ------------------------------- */
+
+
+#contribute_title {
+position:fixed;
+left:20px;
+top:250px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#/*contribute_titlefield*/ {
+position:fixed;
+left:20px;
+top:280px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_description {
+position:fixed;
+left:20px;
+top:320px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_descriptionfield {
+position:fixed;
+left:20px;
+top:350px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+#contribute_name {
+position:fixed;
+left:20px;
+top:390px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_namefield {
+position:fixed;
+left:20px;
+top:420px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+#contribute_email {
+position:fixed;
+left:20px;
+top:460px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_emailfield {
+position:fixed;
+left:20px;
+top:490px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+/* -------------------------------- Column Two ------------------------------- */
+
+
+#contribute_city1name {
+position:fixed;
+left:348px;
+top:250px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city1namefield {
+position:fixed;
+left:348px;
+top:280px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city1media {
+position:fixed;
+left:348px;
+top:320px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city1mediafield {
+position:fixed;
+left:348px;
+top:350px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city1map {
+position:fixed;
+left:348px;
+top:390px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city1mapfield {
+position:fixed;
+left:348px;
+top:420px;
+width:308px;
+height:200px;
+background-color:#99D6FF;
+}
+
+
+/* -------------------------------- Column Three ------------------------------- */
+
+
+#contribute_city2name {
+position:fixed;
+left:676px;
+top:250px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city2namefield {
+position:fixed;
+left:676px;
+top:280px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city2media {
+position:fixed;
+left:676px;
+top:320px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city2mediafield {
+position:fixed;
+left:676px;
+top:350px;
+width:308px;
+height:20px;
+background-color:#FFFFFF;
+}
+
+
+#contribute_city2map {
+position:fixed;
+left:676px;
+top:390px;
+font-size:20px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#contribute_city2mapfield {
+position:fixed;
+left:676px;
+top:420px;
+width:308px;
+height:200px;
+background-color:#99D6FF;
+}
