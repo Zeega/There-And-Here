@@ -101,7 +101,7 @@
 						backgroundColor: '#0099FF',
 						padding: "8px",
 						border: "1px solid #FFFFFF"
-
+	
 					}
 				});
 				// Insert a headline into that popup ADJUST STYLE HERE
