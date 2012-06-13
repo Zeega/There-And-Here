@@ -16,35 +16,24 @@
 			"child_items": [
 				{
 					"id": 22,
-					"title": "Bronx, NY ----- Akuse, Ghana",
+					"title": "Introduction",
 					"description": "",
 					"media_geo_latitude": 40.8510,
 					"media_geo_longitude": -73.8611,
 					"attributes": {
-							"project_id":783,
-							"frame_id":4074
+							"project_id":957,
+							"frame_id":5641
 					}
 				},
 				{
 					"id": 23,
-					"title": "Inspiration: Bronx, NY",
+					"title": "Bronx, NY",
 					"description": "",
 					"media_geo_latitude": 40.83555, 
 					"media_geo_longitude": -73.92076,
 					"attributes": {
-							"project_id":780,
-							"frame_id":4023
-					}
-				},
-				{
-					"id": 24,
-					"title": "Home: Connecticut",
-					"description": "",
-					"media_geo_latitude": 41.3838,  
-					"media_geo_longitude": -72.903,					
-					"attributes": {
-							"project_id":566,
-							"frame_id":3540
+							"project_id":958,
+							"frame_id":5642
 					}
 				}
 			],
