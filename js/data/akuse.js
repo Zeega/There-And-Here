@@ -21,7 +21,11 @@
 					"media_geo_longitude": 0.052,
 					"attributes": {
 							"project_id":957,
+<<<<<<< HEAD
 						    "frame_id":5641
+=======
+							"frame_id":5641
+>>>>>>> 6c35b6fdbb17ff0613f3b6d34dbd8fbbc519a340
 					}
 				},
 				{
@@ -31,8 +35,13 @@
 					"media_geo_latitude": 6.090349,
 					"media_geo_longitude": 0.123512,
 					"attributes": {
+<<<<<<< HEAD
 						"project_id": 959,
 						"frame_id": 5643
+=======
+							"project_id":959,
+							"frame_id":5643
+>>>>>>> 6c35b6fdbb17ff0613f3b6d34dbd8fbbc519a340
 					}
 				}
 			],
