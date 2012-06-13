@@ -173,16 +173,20 @@ border:none;
 #mainmenu {
 position: absolute;
 z-index:10001;
-display:block;
+}
+
+#mainmenu-map {
+	z-index:10001;
+	margin: 0;
+	padding: 20;
+	top:20px;
+	left:50px;
+	position: fixed;
 }
 
 .caret {
 	border-top-color: #FFFFFF;
 	border-bottom-color: #FFFFFF;
-}
-
-.caret hover {
-	color:#0099FF;
 }
 
 .dropdown-menu{
