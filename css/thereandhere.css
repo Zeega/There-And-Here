@@ -176,59 +176,18 @@ z-index:10001;
 display:block;
 }
 
-#mainmenu a { display: block; text-decoration: none; padding: 3px 10px; }
-#mainmenu a:hover { 	color:#0099FF; text-decoration: none; 	border-bottom:3px solid; }
-
-#mainmenu ul li, #cssm1 ul li ul li  { list-style-type:none; }
-
-#mainmenu ul li { float: left; }
-
-#mainmenu ul li ul, #mainmenu:hover ul li ul, #mainmenu:hover ul li:hover ul li ul{ 
-	display:none;
-	list-style-type:none; 
-	}
-
-#mainmenu:hover ul, #mainmenu:hover ul li:hover ul, #mainmenu:hover ul li:hover ul li:hover ul { 
-	display:block; 
-	}
-
-#mainmenu:hover ul li:hover ul li:hover ul { 
-	position: absolute;
-	margin-left: 120px;
-	margin-top: -20px;
-	}
-
-#mainmapul {
-	list-style-type: none;
-	display:block;
-	margin: 0;
-	padding: 20;
-	top:20px;
-	left:50px;
-	position: fixed;
+.caret {
+	border-top-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
 }
 
-#mainmapul a { display: block; text-decoration: none; padding: 3px 10px; }
-#mainmapul a:hover { 	color:#0099FF; text-decoration: none; 	border-bottom:3px solid; }
+.caret hover {
+	color:#0099FF;
+}
 
-#mainmapul ul li, #cssm1 ul li ul li  { list-style-type:none; }
-
-#mainmapul ul li { float: left; }
-
-#mainmapul ul li ul, #mainmapul:hover ul li ul, #mainmapul:hover ul li:hover ul li ul{ 
-	display:none;
-	list-style-type:none; 
-	}
-
-#mainmapul:hover ul, #mainmapul:hover ul li:hover ul, #mainmapul:hover ul li:hover ul li:hover ul { 
-	display:block; 
-	}
-
-#mainmapul:hover ul li:hover ul li:hover ul { 
-	position: absolute;
-	margin-left: 120px;
-	margin-top: -20px;
-	}
+.dropdown-menu{
+    background-color: transparent;
+}
 
 ul {
 	list-style-type: none;
