@@ -11,19 +11,32 @@
   <link rel="stylesheet" href="css/thereandhere.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="js/lib/leaflet/leaflet.css">
-    
+    <script src="js/lib/jquery-1.7.1.min.js" ></script>
+	<script src="js/lib/bootstrap.js" ></script>
 </head>
 
 <body>
   
   <!-- JC added this as the main menu -->  
-  <div id="mainmenu">
-  	<ul>
-  	<li><a href="index.html">There+Here</a></li>
-    <li><a href="index.html">Contribute</a></li>
-    <li><a href="about.html">About</a></li>
-  	</ul>
-  </div> 
+	<div id="mainmenu">
+		<ul class="mainmenu">
+			<li class="dropdown" id="menu1">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">There+Here</a>
+					<ul class= "dropdown-menu main">
+						<li><a href="index.html#connection/1">Los Angeles, CA --- Mexico</a></li>
+						<li><a href="index.html#connection/2">Bronx, NY --- Akuse, Ghana</a></li>
+						<li><a href="index.html#connection/3">Irvine, CA --- Seoul, Korea</a></li>
+						<li><a href="index.html#connection/5">Patterson, NJ --- Limuru, Kenya</a></li>
+						<li><a href="index.html#connection/6">New York, NY --- Cairo, Egypt</a></li>
+						<li><a href="index.html#connection/7">Touba, Senegal --- New York, NY</a></li>
+						<li><a href="index.html#connection/9">Los Angeles, CA --- Tavehua, Mexico</a></li>
+						<li><a href="index.html#connection/10">Staten Island, NY --- Ashanti, Ghana</a></li>
+				   </ul>
+			</li>
+			<li><a href="contribute.html">Contribute</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	  </div> 
   <div id="sidllink">
   	<a href="http://www.spatialinformationdesignlab.org/" target="blank"><img src="http://ear-chitecture.com/downloads/sidl_link.png"/></a>
   </div>
@@ -37,8 +50,9 @@
   	<!-- Placeholder Text -->
   		To contribute your story to There + Here, please fill out the form below and we will contact you about how to get involved.
 	
-<form action="https://docs.google.com/spreadsheet/formResponse?formkey=dEdNUE9kVXVGX2dNdVBLMmVRWC1RbVE6MQ&amp;theme=0AX42CRMsmRFbUy03NTAzM2Q4My03ODU1LTQ2NzItODI2YS1kZmU5YzdiMzZjOGQ&amp;ifq" method="POST">
-
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='confirmcontrib.html';}"></iframe>
+<form action="https://docs.google.com/spreadsheet/formResponse?formkey=dEdNUE9kVXVGX2dNdVBLMmVRWC1RbVE6MQ&amp;theme=0AX42CRMsmRFbUy03NTAzM2Q4My03ODU1LTQ2NzItODI2YS1kZmU5YzdiMzZjOGQ&amp;ifq" method="post" target="hidden_iframe" onsubmit="submitted=true;">  
 <br><div class="errorbox-good">
 
 <div class="contribute_name" for="entry_0">Your Name * <br>
