@@ -95,8 +95,8 @@ var lines = { "type": "FeatureCollection",
           ]
         },
       "properties": {
-        "start": "New York, NY",
-        "end": "Cairo, Egypt",
+        "start": "Columbia University",
+        "end": "Egypt & Korea in NYC",
         "author": "Eduardo Calvo Rega, assistance from Anayansi and Eric",
         "description":"The project attempts to explore the personal remittance stories of immigrant workers involved in the food truck business. We take three cases – two halal trucks and a Korilla BBQ truck &#45; all located on Amsterdam Avenue with 116th street, Columbia University. To frame the personal stories and the conditions of transnational economic frameworks we focus on the efficiency of the trucks as well as the business models that support them. The project interweaves personal interviews as well as found audiovisual material of the internet.",
         "start_file":"nyc-halal-edu",

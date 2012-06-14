@@ -10,7 +10,7 @@
 			"media_geo_longitude": -73.96177,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.halalTRUCKS",
+				"tiles":"zeega.foodtrucks-CU",
 				"zoom":16
 			},
 			"child_items": [
@@ -45,6 +45,17 @@
 					"attributes": {
 							"project_id":726,
 							"frame_id":3696
+					}
+				},
+				{
+					"id": 63,
+					"title": "Korilla BBQ",
+					"description": "",
+					"media_geo_latitude": 40.807164, 
+					"media_geo_longitude": -73.960869,
+					"attributes": {
+							"project_id":645,
+							"frame_id":3691
 					}
 				}
 			],

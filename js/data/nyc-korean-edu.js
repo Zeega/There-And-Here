@@ -24,17 +24,6 @@
 							"project_id":719,
 							"frame_id":4961
 					}
-				},
-				{
-					"id": 63,
-					"title": "Korilla BBQ",
-					"description": "",
-					"media_geo_latitude": 40.807164, 
-					"media_geo_longitude": -73.960869,
-					"attributes": {
-							"project_id":645,
-							"frame_id":3691
-					}
 				}
 			],
 			"tags": []
