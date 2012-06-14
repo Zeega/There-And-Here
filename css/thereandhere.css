@@ -46,11 +46,12 @@ border-color: #0099FF;
 padding: 10px;
 color: #FFFFFF;
 font-size: 14px;
-position:absolute;
+position: absolute;
+float: left;
 z-index:400001;
 width:500px;
 height:375px;
-top: 150px;
+top: 100px;
 left: 25%;
 }
 
