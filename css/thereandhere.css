@@ -486,15 +486,15 @@ background-color:#99D6FF;
 
 
 ul a:hover {
-
-text-decoration: none;
-
+	color:#0099FF;
+	text-decoration: none;
+	border-bottom:3px solid; 
 }
 
 
 
 .dropdown-menu.main {
-
+background: transparent;
 max-width:400px;
 overflow:hidden;
 
@@ -502,14 +502,14 @@ overflow:hidden;
 
 
 .dropdown-menu.main a {
-
+color: #FFFFFF;
 width:100%;
 
 
 }
 
 .dropdown-menu.main li {
-
+color: #FFFFFF;
 width:400px;
 
 
