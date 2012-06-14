@@ -38,6 +38,21 @@ position: fixed;
 display:none;
 }
 
+#intro{
+background-size:cover;
+background: transparent;
+border: solid;
+border-color: #0099FF;
+padding: 10px;
+color: #FFFFFF;
+font-size: 14px;
+position:absolute;
+z-index:400001;
+width:500px;
+height:375px;
+top: 150px;
+left: 25%;
+}
 
 #fullscreen{
 background-image: url('../images/fullscreen.png');
@@ -55,7 +70,7 @@ cursor:pointer;
 position:fixed;
 left:20px;
 top:80px;
-font-size:30px;
+font-size:26px;
 font-weight: bold;
 font-family: Helvetica, Arial, sans-serif;
 text-align: left;
