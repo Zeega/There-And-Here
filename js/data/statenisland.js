@@ -37,17 +37,6 @@
 					}
 				},
 				{
-					"id": 108,
-					"title": "Clifton",
-					"description": "",
-					"media_geo_latitude": 40.6201041,
-					"media_geo_longitude": -74.0770857,
-					"attributes": {
-							"project_id":863,
-							"frame_id":4650
-					}
-				},
-				{
 					"id": 109,
 					"title": "New Brighton",
 					"description": "",
