@@ -145,7 +145,7 @@ this.thereandhere = {
 			_this.navMaps[1].addMap();
 		});
 		
-		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
+		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/sequence/"+this.navMaps[0].collection.at(0).get('attributes').sequence_id+"/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
 		
 		$('#project-title').fadeOut('fast',function(){ $(this).html(_this.navMaps[0].collection.at(0).get('title')).fadeIn();});
 		
