@@ -39,8 +39,9 @@ display:none;
 }
 
 #intro{
+display:none;
 background-size:cover;
-background: transparent;
+background: rgba(0, 0, 0, 0.75);
 border: solid;
 border-color: #0099FF;
 padding: 10px;
@@ -49,10 +50,10 @@ font-size: 14px;
 position: absolute;
 float: left;
 z-index:400001;
-width:500px;
-height:375px;
+width:60%;
+
 top: 100px;
-left: 25%;
+left: 20%;
 }
 
 #fullscreen{
@@ -219,11 +220,6 @@ ul a {
 	text-decoration: none;
 }
 
-ul a:hover {
-	color:#0099FF;
-	text-decoration: none;
-	border-bottom:3px solid; 
-}
 
 li {
 	list-style-type: none;
@@ -489,13 +485,13 @@ background-color:#99D6FF;
 ul a:hover {
 	color:#0099FF;
 	text-decoration: none;
-	border-bottom:3px solid; 
+	cursor:pointer; 
 }
 
 
 
 .dropdown-menu.main {
-background: transparent;
+background: rgba(0,0,0,0.7);
 max-width:400px;
 overflow:hidden;
 

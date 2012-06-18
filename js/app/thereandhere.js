@@ -24,7 +24,8 @@ this.thereandhere = {
 
 	init : function(){
 		this.loadModules();
-		this.isLoaded = true
+		this.isLoaded = true;
+		this.firstTime = true;
 		this.startRouter();
 	},
 	
@@ -81,7 +82,15 @@ this.thereandhere = {
 
 	loadMain : function( frame ){
 
-
+		if(this.firstTime){
+			this.firstTime=false;
+			$('#intro').fadeIn('fast',function(){
+				$('body').click(function(){
+					$('#intro').fadeOut('slow');
+					//$(this).unbind();
+				});
+			});
+		}
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
 		$('#home').click(function(){ thereandhere.app.home();});
