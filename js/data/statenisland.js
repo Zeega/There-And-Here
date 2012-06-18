@@ -22,7 +22,8 @@
 					"media_geo_longitude": -74.130,
 					"attributes": {
 							"project_id":861,
-							"frame_id":4648
+							"frame_id":4648,
+							"sequence_id":861
 					}
 				},
 				{
@@ -33,7 +34,8 @@
 					"media_geo_longitude": -74.1304203,
 					"attributes": {
 							"project_id":862,
-							"frame_id":4649
+							"frame_id":4649,
+							"sequence_id":862
 					}
 				},
 				{
@@ -44,7 +46,8 @@
 					"media_geo_longitude": -74.0929195,
 					"attributes": {
 							"project_id":779,
-							"frame_id":3966
+							"frame_id":3966,
+							"sequence_id":779
 					}
 				},
 				{
@@ -55,7 +58,8 @@
 					"media_geo_longitude": -74.1365318,
 					"attributes": {
 							"project_id":864,
-							"frame_id":4907
+							"frame_id":4907,
+							"sequence_id":864
 					}
 				}
 			],

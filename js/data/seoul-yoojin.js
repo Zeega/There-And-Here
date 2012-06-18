@@ -22,7 +22,8 @@
 					"media_geo_longitude": 126.976,
 					"attributes": {
 							"project_id":544,
-							"frame_id":4392
+							"frame_id":4392,
+							"sequence_id":544
 					}
 				},{
 					"id": 43,
@@ -32,7 +33,8 @@
 					"media_geo_longitude": 127.02819,
 					"attributes": {
 							"project_id":650,
-							"frame_id":3286
+							"frame_id":3286,
+							"sequence_id":650
 					}
 				}
 			],

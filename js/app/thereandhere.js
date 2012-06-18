@@ -152,14 +152,14 @@ this.thereandhere = {
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
 				$('#project_title').fadeOut('fast',function(){ $(this).html(itemModel.get('title')).fadeIn();});
-				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/sequence/"+itemModel.get('attributes').sequence_id+"/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 			});
 		});
 		
 		_.each( _.toArray(this.navMaps[1].collection), function(itemModel){		
 			itemModel.on('selected',function(){
 				$('#project_title').fadeOut('fast',function(){$(this).html(itemModel.get('title')).fadeIn();});
-				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/sequence/"+itemModel.get('attributes').sequence_id+"/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 			});	
 		});
 	},
