@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+background-color:#222222;
+color: #ffffff;
+}
+
+#countries path {
+  fill: #252525;
+  stroke: #222; 
+  stroke-width: 0.25;
+  //opacity: 25%;
+}
+
+path.arc {
+  pointer-events: none;
+  fill: none;
+  stroke: #0099FF;
+  display: none;
+  stroke-width: 0.5;
+  opacity: 0.5;
+}
+
+path.cell {
+  fill: none;
+  pointer-events: all;
+}
+
+text.label {
+	pointer-events: none;
+	display: none;
+	fill: #FFFFFF;
+	font-size: 10px;
+}
+
+text.list {
+	pointer-events: none;
+	display: none;
+	fill: #FFFFFF;
+	font-size: 14px;
+}
+
+text.cell {
+	fill:none;
+	pointer-events: all;
+}
+
+circle {
+  fill: #0099FF;
+  fill-opacity: .5;
+  stroke: #111;
+  stroke-width: 0.1;
+}
+
+#cells g:hover path.arc {
+  display: inherit;
+}
+
+#cells g:hover text.label {
+  display: inherit;
+}
+
+#cells g:hover text.list {
+  display: inherit;
+}
