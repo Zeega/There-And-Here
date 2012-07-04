@@ -6,7 +6,7 @@ module.exports = {
 		{
 		    input: 'js/loaders/index.js',
 		    output: 'js_min/index.js',
-		    message:"Don't forget to check the JS paths in index.php"
+		    message:"Don't forget to check the JS paths in index.html"
 		},	
 	]
 }
