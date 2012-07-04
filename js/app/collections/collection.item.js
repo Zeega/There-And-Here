@@ -41,7 +41,7 @@
 		
 		parse: function(data)
 		{
-			this.tiles=data.items[0].tiles;
+			this.tiles=data.items[0].attributes.tiles;
 			this.zoom=data.items[0].attributes.zoom;
 			this.center_lat=data.items[0].media_geo_latitude;
 			this.center_lng=data.items[0].media_geo_longitude;

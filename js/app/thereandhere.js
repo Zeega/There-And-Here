@@ -24,7 +24,8 @@ this.thereandhere = {
 
 	init : function(){
 		this.loadModules();
-		this.isLoaded = true
+		this.isLoaded = true;
+		this.firstTime = true;
 		this.startRouter();
 	},
 	
@@ -81,7 +82,15 @@ this.thereandhere = {
 
 	loadMain : function( frame ){
 
-
+		if(this.firstTime){
+			this.firstTime=false;
+			$('#intro').fadeIn('fast',function(){
+				$('body').click(function(){
+					$('#intro').fadeOut('slow');
+					//$(this).unbind();
+				});
+			});
+		}
 		$('#main').html(this.connectionsMap.render());
 		this.connectionsMap.addMap();
 		$('#home').click(function(){ thereandhere.app.home();});
@@ -145,21 +154,21 @@ this.thereandhere = {
 			_this.navMaps[1].addMap();
 		});
 		
-		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
+		$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+this.navMaps[0].collection.at(0).get('attributes').project_id+"/view#player/sequence/"+this.navMaps[0].collection.at(0).get('attributes').sequence_id+"/frame/"+this.navMaps[0].collection.at(0).get('attributes').frame_id+"' ></iframe>");
 		
 		$('#project-title').fadeOut('fast',function(){ $(this).html(_this.navMaps[0].collection.at(0).get('title')).fadeIn();});
 		
 		_.each( _.toArray(this.navMaps[0].collection), function(itemModel){		
 			itemModel.on('selected',function(){
 				$('#project_title').fadeOut('fast',function(){ $(this).html(itemModel.get('title')).fadeIn();});
-				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe' src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/sequence/"+itemModel.get('attributes').sequence_id+"/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 			});
 		});
 		
 		_.each( _.toArray(this.navMaps[1].collection), function(itemModel){		
 			itemModel.on('selected',function(){
 				$('#project_title').fadeOut('fast',function(){$(this).html(itemModel.get('title')).fadeIn();});
-				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
+				$('#tah-zeega-player').empty().append("<iframe id='tah-iframe' class='tah-iframe'  src ='http://alpha.zeega.org/project/"+itemModel.get('attributes').project_id+"/view#player/sequence/"+itemModel.get('attributes').sequence_id+"/frame/"+itemModel.get('attributes').frame_id+"' ></iframe>");
 			});	
 		});
 	},

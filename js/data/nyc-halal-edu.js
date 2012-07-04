@@ -10,7 +10,7 @@
 			"media_geo_longitude": -73.96177,
 			"child_items_count": 4,
 			"attributes": {
-				"tiles":"zeega.halalTRUCKS",
+				"tiles":"zeega.foodtrucks-CU",
 				"zoom":16
 			},
 			"child_items": [
@@ -22,7 +22,8 @@
 					"media_geo_longitude": -73.96177,
 					"attributes": {
 							"project_id":719,
-							"frame_id":4961
+							"frame_id":4961,
+							"sequence_id":719
 					}
 				},
 				{
@@ -33,7 +34,8 @@
 					"media_geo_longitude": -73.96095,
 					"attributes": {
 							"project_id":722,
-							"frame_id":3197
+							"frame_id":3197,
+							"sequence_id":722
 					}
 				},
 				{
@@ -44,7 +46,20 @@
 					"media_geo_longitude": -73.960860,
 					"attributes": {
 							"project_id":726,
-							"frame_id":3696
+							"frame_id":3696,
+							"sequence_id":726
+					}
+				},
+				{
+					"id": 63,
+					"title": "Korilla BBQ",
+					"description": "",
+					"media_geo_latitude": 40.807164, 
+					"media_geo_longitude": -73.960869,
+					"attributes": {
+							"project_id":645,
+							"frame_id":3691,
+							"sequence_id":645
 					}
 				}
 			],
