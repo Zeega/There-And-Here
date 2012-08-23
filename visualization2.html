@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  
 
-  <title>Remittances</title>
+  <title>Migration</title>
 
   <!-- Application styles -->
   <link rel="stylesheet" href="css/thereandhere.css">
-  <link rel="stylesheet" href="css/remittances.css">
+  <link rel="stylesheet" href="css/migration.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 	<script src="js/lib/jquery-1.7.1.min.js" ></script>
 	<script src="js/lib/bootstrap.js" ></script> 
@@ -48,15 +49,15 @@
 			<a href="http://www.spatialinformationdesignlab.org/" target="blank"><img src="http://ear-chitecture.com/downloads/sidl_link.png"/></a>
 	  </div>
 	<div id="d3viz">
-		<span id="connection-title">Remittances by Country of Origin</span><br/>
+		<span id="connection-title">Migration by Country of Origin</span><br/>
 		<span style="font-size:10px;"><em>The visualization may take a moment to load.</em><br/></span>
 		  	<div>
-		  		<h2>Origin: <img height="30px"> <span1>Country</span1> - $<span2></span2></h2>
+		  		<h2>Origin: <img height="30px"> <span1>Country</span1> - <span2></span2> people</h2>
 		  		<!--<h3> To the following countries:<br/></h3>-->
 		  	</div>
 		 	<div id="map" class="main" width="1280px" float="right"></div>
 			<div>
-		<h6>All values in U.S. Dollars, Source: IFAD 2007</h6>
+		<h6>Source: IFAD 2007</h6>
 
 <script type="text/javascript" src="js/lib/d3/d3.js"></script>
 <script type="text/javascript" src="js/lib/d3/d3.csv.js"></script>
@@ -116,7 +117,7 @@ d3.json("js/data/world-countries.json", function(collection) {
       .attr("d", path);
 });
 
-d3.csv("js/data/host-target3.csv", function(flights) {
+d3.csv("js/data/migrants.csv", function(flights) {
   var linksByOrigin = {},
       countByAirport = {},
       sumByOrigin = {},
@@ -134,19 +135,19 @@ d3.csv("js/data/host-target3.csv", function(flights) {
 
 
  flights.forEach(function(flight) {
-    var origin = flight.HostCode,
-        destination = flight.TargetCode,
-		amnt = flight.Amount,
+    var origin = flight.OriginCode,
+        destination = flight.DestCode,
+		amnt = flight.Migrants,
         links = linksByOrigin[origin] || (linksByOrigin[origin] = []);
     maxAmountArc = Math.max(maxAmountArc, amnt);
     minAmountArc = Math.min(minAmountArc, amnt);
     links.push({source: origin, target: destination, amount: parseInt(amnt)});
     countByAirport[origin] = (countByAirport[origin] || 0) + 1;
-    sumByOrigin[origin] = (sumByOrigin[origin] || 0) + parseInt(flight.Amount);
+    sumByOrigin[origin] = (sumByOrigin[origin] || 0) + parseInt(flight.Migrants);
     maxAmountCircle = Math.max(maxAmountCircle, sumByOrigin[origin]);
     minAmountCircle = Math.min(minAmountCircle, sumByOrigin[origin]);
     countByAirport[destination] = (countByAirport[destination] || 0) + 1;
-    sumByDest[destination] = (sumByDest[destination] || 0) + parseInt(flight.Amount);
+    sumByDest[destination] = (sumByDest[destination] || 0) + parseInt(flight.Migrants);
   });
   
   function unitVector (src, dst) {
@@ -262,7 +263,7 @@ d3.csv("js/data/host-target3.csv", function(flights) {
 	     	.text(function(d) { 
 	     	    //var index = bSearch(airports, "Code", d.target);
 	     	    //return airports[index].Country + "- $" + addCommas(d.amount);
-	     	    return airports.filter(function(a) { return a.Code == d.target; })[0].Country + "- $" + addCommas(d.amount);
+	     	    return airports.filter(function(a) { return a.Code == d.target; })[0].Country + " - " + addCommas(d.amount) + " people";
 	     	 });
 	
 	g.selectAll("text.list")
@@ -276,7 +277,7 @@ d3.csv("js/data/host-target3.csv", function(flights) {
 	     	.text(function(d) { 
 	     	    //var index = bSearch(airports, "Code", d.target);
 	     	    //return airports[index].Country + "- $" + addCommas(d.amount);
-	     	    return airports.filter(function(a) { return a.Code == d.target; })[0].Country + "- $" + addCommas(d.amount);
+	     	    return airports.filter(function(a) { return a.Code == d.target; })[0].Country + " - " + addCommas(d.amount)+ " people";
 	     	 }); 	
 	     
      });
