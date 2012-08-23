@@ -233,18 +233,19 @@ li {
 #bodytext{
 position:fixed;
 left:20px;
-line-height:30px;
-top:130px;
+line-height:18px;
+top:100px;
 width:644px;
-font-size:20px;
+font-size:14px;
 font-weight: bold;
 font-family: Helvetica, Arial, sans-serif;
 text-align: left;
 color:#FFFFFF;
+overflow-x: hidden;
 }
 
 #bodytext a {
-	font-size:20px;
+	font-size:14px;
 	font-weight: bold;
 	font-family: Helvetica, Arial, sans-serif;
 	color:#FFFFFF;
@@ -513,11 +514,84 @@ width:400px;
 }
 
 
+/*-------------------------About Page -------------------*/
+#abouttext{
+position:fixed;
+left:20px;
+line-height:18px;
+top:100px;
+width:644px;
+font-size:14px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+overflow-x: hidden;
+}
+
+#abouttext a {
+	font-size:14px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	color:#FFFFFF;
+	text-decoration: none;
+	border-bottom:3px solid; 
+}
+
+#abouttext a:hover {
+	color:#0099FF;
+	text-decoration: none;
+	border-bottom:3px solid; 
+}
+
+/*-------------------------Remittances Page -------------------*/
+#d3viz{
+position:fixed;
+left:20px;
+line-height:18px;
+top: 100px;
+font-size:14px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+text-align: left;
+color:#FFFFFF;
+}
+
+#d3viz a {
+	font-size:14px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	color:#FFFFFF;
+	text-decoration: none;
+	border-bottom:3px solid; 
+}
+
+#d3viz a:hover {
+	color:#0099FF;
+	text-decoration: none;
+	border-bottom:3px solid; 
+}
+
+#d3viz h2 {
+  text-align: left;
+  font-size: inherit;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  position: relative;
+  color: inherit;
+}
 
 
-
-
-
+#d3viz h6 {
+	bottom: 5px;
+	right: 5px;
+	text-align: right;
+	position: absolute;
+  	font-size: 10px;
+  	font-weight: 100;
+  	color: inherit;
+}
 
 
 
